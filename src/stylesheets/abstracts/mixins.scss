@@ -1,0 +1,58 @@
+@mixin break($breakpoint) {
+
+  @if $breakpoint == huge-screen {
+    @media (min-width:112.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == medium-screen {
+    @media (max-width:75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == small-screen {
+    @media (max-width:56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tiny-screen {
+    @media (max-width:37.5em) {
+      @content;
+    }
+  }
+}
+
+@mixin truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin truncate-multiline-text {
+  line-height: 1.6rem;
+  margin-right: -1.6rem;
+  max-width: calc( 100% - 1.6rem );
+  overflow: hidden;
+  padding-right: 1.6rem;
+  position: relative;
+
+  &:after {
+    background-color: #ffffff;
+    content: '';
+    position: absolute;
+    height: 1.6rem;
+    margin-top: 0.4rem;
+    right: 0;
+    width: 1.6rem;
+  }
+
+  &:before {
+    bottom: 0;
+    content: '...';
+    position: absolute;
+    right: 0;
+  }
+}
