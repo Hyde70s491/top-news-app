@@ -1,13 +1,16 @@
-import React from 'react';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 
-import './App.scss';
-import '../stylesheets/main.scss';
+import "./App.scss";
+import "../stylesheets/main.scss";
 
 function App() {
   return (
-    <div className="app">
-      Hello, Top News App!
-    </div>
+    <Switch>
+      <Route exact path="/">
+        <div className="app">Hello, Top News App!</div>
+      </Route>
+    </Switch>
   );
 }
 
