@@ -3,11 +3,11 @@ import { combineReducers, Reducer } from "redux";
 // test redux, react-redux and reselect libraries
 import { createSelector } from "reselect";
 
-const testReducerInitialState = {
+export const testReducerInitialState = {
   welcomeMessage: "Hello, Top News App!",
 };
 
-const testReducer = (state = testReducerInitialState, action: any) => {
+export const testReducer = (state = testReducerInitialState, action: any) => {
   switch (action.type) {
     default:
       return state;
@@ -15,7 +15,7 @@ const testReducer = (state = testReducerInitialState, action: any) => {
 };
 
 export const selectWelcomeMessage = createSelector(
-  (state: any) => state.test.welcomeMessage,
+  (state: any) => state?.test?.welcomeMessage,
   (welcomeMessage) => welcomeMessage
 );
 //
