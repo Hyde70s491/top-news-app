@@ -1,0 +1,88 @@
+@import "../../../stylesheets/abstracts/variables.scss";
+
+.country-selection {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.country-selection-dropdown {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  &--open {
+    .country-selection-dropdown__toggle-button__indicator {
+      transform: rotate(-180deg);
+    }
+
+    .country-selection-dropdown__options {
+      display: block;
+    }
+  }
+
+  &__toggle-button {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    &__indicator {
+      border-left: 0.6rem solid transparent;
+      border-right: 0.6rem solid transparent;
+      border-top: 0.6rem solid $color-white;
+      height: 0;
+      margin-right: 0.5rem;
+      transition: transform 0.125s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      width: 0;
+    }
+  }
+
+  &__options {
+    background-color: $color-white;
+    border: 0.1rem solid $color-black;
+    display: none;
+    left: 0;
+    min-width: 16rem;
+    position: absolute;
+    top: 3.5rem;
+
+    &__entity {
+      align-items: center;
+      border-bottom: 0.1rem solid $color-black;
+      display: flex;
+      flex-direction: row;
+      padding: 0.5rem 0.5rem 0.5rem 1.7rem;
+      width: 100%;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      &__name {
+        color: $color-black;
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__country-image {
+    background-color: $color-white;
+    border: 0.1rem solid $color-white;
+    border-radius: 50%;
+    height: 3rem;
+    margin-right: 0.5rem;
+    width: 3rem;
+
+    &--inverse {
+      border: 0.1rem solid $color-black;
+    }
+  }
+}
+
+.app-logo {
+  color: $color-white;
+  font-size: 2.4rem;
+  font-weight: 600;
+}

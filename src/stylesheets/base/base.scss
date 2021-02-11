@@ -1,4 +1,4 @@
-@import '../abstracts/mixins.scss';
+@import "../abstracts/mixins.scss";
 
 * {
   box-sizing: border-box;
@@ -49,6 +49,10 @@ button {
   cursor: pointer;
   font: 400 1.6rem Arial, Helvetica, sans-serif;
   padding: 0;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 input {

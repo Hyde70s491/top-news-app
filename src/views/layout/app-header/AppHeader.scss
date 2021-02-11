@@ -1,4 +1,4 @@
-@import "./src/stylesheets/abstracts/variables.scss";
+@import "./../../../stylesheets/abstracts/variables.scss";
 
 .app-header {
   background-color: $color-black;
@@ -12,7 +12,8 @@
     height: 100%;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 120rem;
+    max-width: 180rem;
+    padding: 0 1rem;
     width: 100%;
   }
 }
