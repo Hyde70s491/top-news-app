@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import "./CountrySelection.scss";
 
@@ -39,7 +40,9 @@ const CountrySelection: React.FC = () => {
         </div>
       </div>
 
-      <span className="app-logo">TopNews</span>
+      <NavLink className="app-logo" to="/top-news">
+        TopNews
+      </NavLink>
     </div>
   );
 };

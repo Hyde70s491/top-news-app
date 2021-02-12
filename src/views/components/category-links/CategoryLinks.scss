@@ -1,0 +1,23 @@
+@import "../../../stylesheets/abstracts/variables.scss";
+
+.category-links {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  &__entity {
+    border-bottom: 0.1rem solid transparent;
+    color: $color-white;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 5rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &--active {
+      border-bottom: 0.1rem solid $color-white;
+    }
+  }
+}
