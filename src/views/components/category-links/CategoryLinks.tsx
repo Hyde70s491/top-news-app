@@ -7,7 +7,7 @@ const CategoryLinks: React.FC = () => {
   return (
     <div className="category-links">
       <NavLink
-        className="category-links__entity"
+        className={`category-links__entity${false ? " frozen-link" : ""}`}
         activeClassName="category-links__entity--active"
         to="/category1"
       >

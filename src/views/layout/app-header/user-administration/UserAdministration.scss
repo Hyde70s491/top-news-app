@@ -1,0 +1,22 @@
+@import "../../../../stylesheets/abstracts/variables.scss";
+
+.user-administration {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  &__action-button {
+    color: $color-white;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+  }
+
+  &__user-image {
+    background-color: $color-white;
+    border: 0.1rem solid $color-white;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}

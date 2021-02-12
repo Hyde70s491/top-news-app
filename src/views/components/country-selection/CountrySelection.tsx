@@ -7,8 +7,8 @@ const CountrySelection: React.FC = () => {
   return (
     <div className="country-selection">
       <div
-        className={`country-selection-dropdown ${
-          false ? "country-selection-dropdown--open" : ""
+        className={`country-selection-dropdown${
+          false ? " country-selection-dropdown--open" : ""
         }`}
       >
         <button
@@ -40,7 +40,10 @@ const CountrySelection: React.FC = () => {
         </div>
       </div>
 
-      <NavLink className="app-logo" to="/top-news">
+      <NavLink
+        className={`app-logo${false ? " frozen-link" : ""}`}
+        to="/top-news"
+      >
         TopNews
       </NavLink>
     </div>
