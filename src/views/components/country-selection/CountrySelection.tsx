@@ -18,7 +18,7 @@ const CountrySelection: React.FC = () => {
           <img
             className="country-selection-dropdown__country-image"
             src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
-            alt="country"
+            alt="selected country"
           />
         </button>
 
@@ -30,7 +30,7 @@ const CountrySelection: React.FC = () => {
             <img
               className="country-selection-dropdown__country-image country-selection-dropdown__country-image--inverse"
               src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
-              alt="country"
+              alt="available country"
             />
             <span className="country-selection-dropdown__options__entity__name">
               Great Britain
