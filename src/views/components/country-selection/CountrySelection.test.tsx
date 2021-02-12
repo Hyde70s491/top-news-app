@@ -1,11 +1,16 @@
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
 
 import CountrySelection from "./CountrySelection";
 
 describe("<CountrySelection /> test", () => {
   it("renders expected entities", () => {
-    render(<CountrySelection />);
+    render(
+      <MemoryRouter>
+        <CountrySelection />
+      </MemoryRouter>
+    );
 
     const selectedCountryImage = screen.getByAltText(/selected country/i);
     expect(selectedCountryImage).toBeInTheDocument();
