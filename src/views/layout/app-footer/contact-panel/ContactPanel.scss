@@ -1,0 +1,46 @@
+@import "../../../../stylesheets/abstracts/variables.scss";
+
+.contact-panel {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+
+  &__label {
+    color: $color-white;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  &__emails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+
+    &__entity {
+      color: $color-white;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0.2rem;
+      text-decoration: underline;
+    }
+  }
+
+  &__separator {
+    background-color: $color-white;
+    height: 3.2rem;
+    margin: 0 2rem;
+    width: 0.1rem;
+  }
+
+  &__link {
+    margin-left: 2rem;
+
+    &__image {
+      background-color: $color-white;
+      border: 0.1rem solid $color-white;
+      border-radius: 50%;
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+}
