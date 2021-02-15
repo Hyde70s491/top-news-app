@@ -5,6 +5,16 @@
   display: flex;
   flex-direction: row;
 
+  &--footer {
+    justify-content: center;
+    margin-bottom: 5rem;
+    width: 100%;
+
+    .category-links__entity {
+      font-size: 1.6rem;
+    }
+  }
+
   &__entity {
     border-bottom: 0.1rem solid transparent;
     color: $color-white;
