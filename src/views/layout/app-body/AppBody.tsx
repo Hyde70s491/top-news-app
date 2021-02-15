@@ -1,11 +1,12 @@
 import React from "react";
 
+import AppFooter from "../app-footer/AppFooter";
 import "./AppBody.scss";
 
 const AppBody: React.FC = () => {
   return (
     <div className="app-body">
-      <div className="app-body__content"></div>
+      <AppFooter />
     </div>
   );
 };
