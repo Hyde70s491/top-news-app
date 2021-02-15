@@ -6,6 +6,10 @@
   flex-direction: row;
   margin-right: 3.5rem;
 
+  a {
+    height: 2.5rem;
+  }
+
   &__action-button {
     color: $color-white;
     font-size: 1.6rem;

@@ -2,9 +2,20 @@ import React from "react";
 
 import "./SearchBar.scss";
 
-const SearchBar: React.FC = () => {
+interface SearchBarProps {
+  readonly barClassName?: string;
+}
+
+const SearchBar: React.FC<SearchBarProps> = (
+  props: React.PropsWithChildren<SearchBarProps>
+) => {
+  const { barClassName } = props;
+
   return (
-    <button className="search-bar" type="button">
+    <button
+      className={`search-bar${barClassName ? " " + barClassName : ""}`}
+      type="button"
+    >
       <div className="search-bar__query">Search</div>
       <img
         className="search-bar__icon"

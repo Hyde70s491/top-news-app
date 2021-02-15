@@ -9,10 +9,18 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 0.2rem 0.75rem;
-  width: 22.5rem;
+  width: 100%;
 
   &:hover {
     opacity: 1;
+  }
+
+  &--header {
+    width: 22.5rem;
+  }
+
+  &--footer {
+    margin: 5rem 0;
   }
 
   &__query {

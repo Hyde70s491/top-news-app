@@ -18,7 +18,7 @@ const AppHeader: React.FC = () => {
         </div>
         <div className="app-header__content__segment app-header__content__segment--right">
           <UserAdministration />
-          <SearchBar />
+          <SearchBar barClassName="search-bar--header" />
         </div>
       </div>
     </div>
