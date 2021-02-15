@@ -22,6 +22,13 @@
     }
   }
 
+  &--footer {
+    .country-selection-dropdown__options {
+      bottom: 3.5rem;
+      top: auto;
+    }
+  }
+
   &__toggle-button {
     align-items: center;
     display: flex;

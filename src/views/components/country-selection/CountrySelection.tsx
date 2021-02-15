@@ -3,13 +3,21 @@ import { NavLink } from "react-router-dom";
 
 import "./CountrySelection.scss";
 
-const CountrySelection: React.FC = () => {
+interface CountrySelectionProps {
+  readonly selectionClassName?: string;
+}
+
+const CountrySelection: React.FC<CountrySelectionProps> = (
+  props: React.PropsWithChildren<CountrySelectionProps>
+) => {
+  const { selectionClassName } = props;
+
   return (
     <div className="country-selection">
       <div
         className={`country-selection-dropdown${
           false ? " country-selection-dropdown--open" : ""
-        }`}
+        }${selectionClassName ? " " + selectionClassName : ""}`}
       >
         <button
           className="country-selection-dropdown__toggle-button"

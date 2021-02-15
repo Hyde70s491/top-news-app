@@ -1,6 +1,7 @@
 import React from "react";
 
 import CategoryLinks from "../../components/category-links/CategoryLinks";
+import CountrySelection from "../../components/country-selection/CountrySelection";
 import SearchBar from "../../components/search-bar/SearchBar";
 import "./AppFooter.scss";
 
@@ -10,6 +11,10 @@ const AppFooter: React.FC = () => {
       <div className="app-footer__content">
         <SearchBar barClassName="search-bar--footer" />
         <CategoryLinks linksClassName="category-links--footer" />
+        <div className="app-footer__content__separator"></div>
+        <div className="app-footer__content__bottom">
+          <CountrySelection selectionClassName="country-selection-dropdown--footer" />
+        </div>
       </div>
     </div>
   );
