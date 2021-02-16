@@ -2,13 +2,13 @@ import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
 
-import DateFormatter from "./DateFormatter";
+import FormattedDate from "./FormattedDate";
 
-describe("<DateFormatter /> test", () => {
+describe("<FormattedDate /> test", () => {
   it("renders expected entities", () => {
     render(
       <MemoryRouter>
-        <DateFormatter />
+        <FormattedDate />
       </MemoryRouter>
     );
 
