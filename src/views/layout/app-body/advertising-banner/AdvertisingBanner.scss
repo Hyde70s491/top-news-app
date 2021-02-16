@@ -1,0 +1,14 @@
+.advertising-banner {
+  height: 17rem;
+
+  a {
+    height: 17rem;
+  }
+
+  &__image {
+    height: 15rem;
+    margin-top: 2rem;
+    object-fit: cover;
+    width: 75rem;
+  }
+}
