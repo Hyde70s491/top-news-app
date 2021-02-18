@@ -1,5 +1,8 @@
 import React from "react";
 
+import NewsThumbnail, {
+  ThumbnailType,
+} from "../../../components/news-thumbnail/NewsThumbnail";
 import SectionTitle from "../../../components/section-title/SectionTitle";
 import "./TopNews.scss";
 
@@ -7,10 +10,35 @@ const TopNews: React.FC = () => {
   return (
     <div className="top-news">
       <SectionTitle titleLabel="TOP HEADLINES" />
+
       <div className="top-news__entities">
-        <div className="top-news__entities__thumbnail--left"></div>
-        <div className="top-news__entities__thumbnail--right-top"></div>
-        <div className="top-news__entities__thumbnail--right-bottom"></div>
+        <div className="top-news__entities__thumbnail top-news__entities__thumbnail--left">
+          <NewsThumbnail
+            thumbnailType={ThumbnailType.TopNews}
+            thumbnailData={{
+              imageUrl: "https://picsum.photos/id/1015/600/600",
+              title: "TOP HEADLINE 1",
+            }}
+          />
+        </div>
+        <div className="top-news__entities__thumbnail top-news__entities__thumbnail--right-top">
+          <NewsThumbnail
+            thumbnailType={ThumbnailType.TopNews}
+            thumbnailData={{
+              imageUrl: "https://picsum.photos/id/1015/600/300",
+              title: "TOP HEADLINE 2",
+            }}
+          />
+        </div>
+        <div className="top-news__entities__thumbnail top-news__entities__thumbnail--right-bottom">
+          <NewsThumbnail
+            thumbnailType={ThumbnailType.TopNews}
+            thumbnailData={{
+              imageUrl: "https://picsum.photos/id/1015/600/300",
+              title: "TOP HEADLINE 3",
+            }}
+          />
+        </div>
       </div>
     </div>
   );

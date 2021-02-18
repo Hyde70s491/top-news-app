@@ -14,22 +14,21 @@
     width: 100%;
 
     &__thumbnail {
+      position: relative;
+
       &--left {
-        background-color: blue;
         grid-area: left;
-        padding-bottom: calc(100% - 0.5rem);
+        padding-bottom: calc(80% - 0.5rem);
       }
 
       &--right-top {
-        background-color: red;
         grid-area: right-top;
-        padding-bottom: calc(50% - 0.5rem);
+        padding-bottom: calc(40% - 0.5rem);
       }
 
       &--right-bottom {
-        background-color: yellow;
         grid-area: right-bottom;
-        padding-bottom: calc(50% - 0.5rem);
+        padding-bottom: calc(40% - 0.5rem);
       }
     }
   }
