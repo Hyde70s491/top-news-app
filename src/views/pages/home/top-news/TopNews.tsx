@@ -1,5 +1,6 @@
 import React from "react";
 
+import MoreButton from "../../../components/more-button/MoreButton";
 import NewsThumbnail, {
   ThumbnailType,
 } from "../../../components/news-thumbnail/NewsThumbnail";
@@ -43,6 +44,8 @@ const TopNews: React.FC = () => {
           />
         </div>
       </div>
+
+      <MoreButton />
     </div>
   );
 };
