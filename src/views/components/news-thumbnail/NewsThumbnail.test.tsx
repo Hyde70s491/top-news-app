@@ -8,6 +8,7 @@ describe("<NewsThumbnail /> test", () => {
   it("renders expected entities", () => {
     const thumbnailTypeProp = ThumbnailType.TopNews;
     const thumbnailDataProp = {
+      id: "test-id",
       imageUrl: "https://test-url",
       subtitle: "Test Subtitle",
       text: "Test Text",
