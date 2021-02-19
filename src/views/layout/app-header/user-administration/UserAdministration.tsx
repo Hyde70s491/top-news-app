@@ -10,7 +10,10 @@ const UserAdministration: React.FC = () => {
         Sign In
       </button>
 
-      <NavLink className={`${false ? "frozen-link" : ""}`} to="/profile">
+      <NavLink
+        className={`${false ? "frozen-link" : ""}`}
+        to="/top-news/profile/user1"
+      >
         <img
           className="user-administration__user-image"
           src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"

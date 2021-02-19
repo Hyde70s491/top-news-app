@@ -1,9 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useRouteMatch } from "react-router-dom";
 
 import "./NewsThumbnail.scss";
 
 interface ThumbnailData {
+  readonly id: string;
   readonly imageUrl?: string;
   readonly subtitle?: string;
   readonly text?: string;
@@ -23,10 +24,14 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
   props: React.PropsWithChildren<NewsThumbnailProps>
 ) => {
   const { thumbnailData, thumbnailType } = props;
-  const { imageUrl, subtitle, text, title } = thumbnailData;
+  const { id, imageUrl, subtitle, text, title } = thumbnailData;
+  const match = useRouteMatch();
 
   return (
-    <NavLink className={`news-thumbnail ${thumbnailType}`} to="/newsId">
+    <NavLink
+      className={`news-thumbnail ${thumbnailType}`}
+      to={`${match.path}/${id}`}
+    >
       {imageUrl && (
         <img className="news-thumbnail__image" src={imageUrl} alt="news" />
       )}

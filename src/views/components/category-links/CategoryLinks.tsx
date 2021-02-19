@@ -19,7 +19,7 @@ const CategoryLinks: React.FC<CategoryLinksProps> = (
       <NavLink
         className={`category-links__entity${false ? " frozen-link" : ""}`}
         activeClassName="category-links__entity--active"
-        to="/category1"
+        to="/top-news/category1"
       >
         Category1
       </NavLink>
