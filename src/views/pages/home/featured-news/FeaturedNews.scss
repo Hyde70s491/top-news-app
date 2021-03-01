@@ -1,3 +1,15 @@
-* {
-  color: red;
+.featured-news {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  width: 100%;
+
+  &__left {
+    width: 66%;
+  }
+
+  &__right {
+    padding-left: 2rem;
+    width: 34%;
+  }
 }

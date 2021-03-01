@@ -10,6 +10,27 @@
   right: 0;
   top: 0;
 
+  &--popular-news {
+    .news-thumbnail__image {
+      height: 50%;
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+
+    .news-thumbnail__title {
+      color: $color-black;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .news-thumbnail__subtitle {
+      color: $color-black;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+  }
+
   &--top-news {
     justify-content: flex-end;
     overflow: hidden;
@@ -18,7 +39,6 @@
     .news-thumbnail__image {
       bottom: 0;
       left: 0;
-      object-fit: cover;
       position: absolute;
       right: 0;
       top: 0;
@@ -31,5 +51,9 @@
       font-weight: 600;
       text-shadow: 0 1rem 1rem $color-black;
     }
+  }
+
+  .news-thumbnail__image {
+    object-fit: cover;
   }
 }

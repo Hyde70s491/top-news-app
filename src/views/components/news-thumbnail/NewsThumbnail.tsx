@@ -7,11 +7,11 @@ interface ThumbnailData {
   readonly id: string;
   readonly imageUrl?: string;
   readonly subtitle?: string;
-  readonly text?: string;
   readonly title: string;
 }
 
 export enum ThumbnailType {
+  PopularNews = "news-thumbnail--popular-news",
   TopNews = "news-thumbnail--top-news",
 }
 
@@ -24,7 +24,7 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
   props: React.PropsWithChildren<NewsThumbnailProps>
 ) => {
   const { thumbnailData, thumbnailType } = props;
-  const { id, imageUrl, subtitle, text, title } = thumbnailData;
+  const { id, imageUrl, subtitle, title } = thumbnailData;
   const match = useRouteMatch();
 
   return (
@@ -37,7 +37,6 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
       )}
       <span className="news-thumbnail__title">{title}</span>
       {subtitle && <span className="news-thumbnail__subtitle">{subtitle}</span>}
-      {text && <span className="news-thumbnail__text">{text}</span>}
     </NavLink>
   );
 };

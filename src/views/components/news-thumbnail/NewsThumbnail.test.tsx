@@ -11,7 +11,6 @@ describe("<NewsThumbnail /> test", () => {
       id: "test-id",
       imageUrl: "https://test-url",
       subtitle: "Test Subtitle",
-      text: "Test Text",
       title: "Test Title",
     };
 
@@ -27,13 +26,10 @@ describe("<NewsThumbnail /> test", () => {
     const thumbnailImage = screen.getByAltText(/news/i);
     expect(thumbnailImage).toBeInTheDocument();
 
-    const expectedSubtitle = screen.getByText(/Test Subtitle/i);
-    expect(expectedSubtitle).toBeInTheDocument();
-
-    const expectedText = screen.getByText(/Test Text/i);
-    expect(expectedText).toBeInTheDocument();
-
     const expectedTitle = screen.getByText(/Test Title/i);
     expect(expectedTitle).toBeInTheDocument();
+
+    const expectedSubtitle = screen.getByText(/Test Subtitle/i);
+    expect(expectedSubtitle).toBeInTheDocument();
   });
 });
