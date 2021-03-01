@@ -31,6 +31,17 @@
     }
   }
 
+  &--suggested-news {
+    border-bottom: 1px solid $color-black;
+    padding-top: 2rem;
+
+    .news-thumbnail__title {
+      color: $color-black;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+  }
+
   &--top-news {
     justify-content: flex-end;
     overflow: hidden;

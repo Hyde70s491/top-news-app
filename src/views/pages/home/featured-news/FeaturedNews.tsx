@@ -1,6 +1,7 @@
 import React from "react";
 
 import PopularNews from "./popular-news/PopularNews";
+import SuggestedNews from "./suggested-news/SuggestedNews";
 import "./FeaturedNews.scss";
 
 const FeaturedNews: React.FC = () => {
@@ -11,11 +12,7 @@ const FeaturedNews: React.FC = () => {
       </div>
 
       <div className="featured-news__right">
-        {/* <SectionTitle titleLabel="SUGGESTED" />
-
-
-
-        <MoreButton /> */}
+        <SuggestedNews />
       </div>
     </div>
   );
