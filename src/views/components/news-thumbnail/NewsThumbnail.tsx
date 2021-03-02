@@ -11,6 +11,7 @@ interface ThumbnailData {
 }
 
 export enum ThumbnailType {
+  NewsByCategory = "news-thumbnail--news-by-category",
   PopularNews = "news-thumbnail--popular-news",
   SuggestedNews = "news-thumbnail--suggested-news",
   TopNews = "news-thumbnail--top-news",

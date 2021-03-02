@@ -10,6 +10,20 @@
   right: 0;
   top: 0;
 
+  &--news-by-category {
+    .news-thumbnail__image {
+      height: 75%;
+      margin-bottom: 1rem;
+      width: 100%;
+    }
+
+    .news-thumbnail__title {
+      color: $color-black;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+  }
+
   &--popular-news {
     .news-thumbnail__image {
       height: 50%;

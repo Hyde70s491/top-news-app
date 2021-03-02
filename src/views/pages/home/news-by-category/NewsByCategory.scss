@@ -1,0 +1,17 @@
+.news-by-category {
+  margin-bottom: 6rem;
+  width: 100%;
+
+  &__entities {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    &__thumbnail {
+      padding-bottom: calc(100% / 4 - 1rem);
+      position: relative;
+      width: calc(100% / 4 - 1rem);
+    }
+  }
+}
