@@ -17,6 +17,15 @@ const AppBody: React.FC = () => {
       <div className="app-body__content">
         <Switch>
           <Route exact path="/top-news" component={HomePage} />
+          <Route exact path="/top-news/profile/:userId">
+            User
+          </Route>
+          <Route exact path="/top-news/:categoryId">
+            Category
+          </Route>
+          <Route exact path="/top-news/:categoryId/:newsId">
+            News
+          </Route>
           <Route exact path="/">
             <Redirect to="/top-news" />
           </Route>

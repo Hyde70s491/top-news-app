@@ -15,7 +15,7 @@ const TopNews: React.FC = () => {
       <div className="top-news__entities">
         <div className="top-news__entities__thumbnail top-news__entities__thumbnail--left">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.TopNews}
+            thumbnailType={ThumbnailType.Headlines}
             thumbnailData={{
               id: "top-headline-1",
               imageUrl: "https://picsum.photos/id/1015/600/600",
@@ -25,7 +25,7 @@ const TopNews: React.FC = () => {
         </div>
         <div className="top-news__entities__thumbnail top-news__entities__thumbnail--right-top">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.TopNews}
+            thumbnailType={ThumbnailType.Headlines}
             thumbnailData={{
               id: "top-headline-2",
               imageUrl: "https://picsum.photos/id/1015/600/300",
@@ -35,7 +35,7 @@ const TopNews: React.FC = () => {
         </div>
         <div className="top-news__entities__thumbnail top-news__entities__thumbnail--right-bottom">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.TopNews}
+            thumbnailType={ThumbnailType.Headlines}
             thumbnailData={{
               id: "top-headline-3",
               imageUrl: "https://picsum.photos/id/1015/600/300",

@@ -15,7 +15,7 @@ const NewsByCategory: React.FC = () => {
       <div className="news-by-category__entities">
         <div className="news-by-category__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.NewsByCategory}
+            thumbnailType={ThumbnailType.Category}
             thumbnailData={{
               id: "news-by-category-1",
               imageUrl: "https://picsum.photos/id/1015/600/600",
@@ -25,7 +25,7 @@ const NewsByCategory: React.FC = () => {
         </div>
         <div className="news-by-category__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.NewsByCategory}
+            thumbnailType={ThumbnailType.Category}
             thumbnailData={{
               id: "news-by-category-2",
               imageUrl: "https://picsum.photos/id/1015/600/600",
@@ -35,7 +35,7 @@ const NewsByCategory: React.FC = () => {
         </div>
         <div className="news-by-category__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.NewsByCategory}
+            thumbnailType={ThumbnailType.Category}
             thumbnailData={{
               id: "news-by-category-3",
               imageUrl: "https://picsum.photos/id/1015/600/600",
@@ -45,7 +45,7 @@ const NewsByCategory: React.FC = () => {
         </div>
         <div className="news-by-category__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.NewsByCategory}
+            thumbnailType={ThumbnailType.Category}
             thumbnailData={{
               id: "news-by-category-4",
               imageUrl: "https://picsum.photos/id/1015/600/600",

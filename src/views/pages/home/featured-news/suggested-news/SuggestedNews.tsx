@@ -15,7 +15,7 @@ const SuggestedNews: React.FC = () => {
       <div className="suggested-news__entities">
         <div className="suggested-news__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.SuggestedNews}
+            thumbnailType={ThumbnailType.Suggested}
             thumbnailData={{
               id: "suggested-headline-1",
               title: "SUGGESTED HEADLINE 1",
@@ -24,7 +24,7 @@ const SuggestedNews: React.FC = () => {
         </div>
         <div className="suggested-news__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.SuggestedNews}
+            thumbnailType={ThumbnailType.Suggested}
             thumbnailData={{
               id: "suggested-headline-2",
               title: "SUGGESTED HEADLINE 2",
@@ -33,7 +33,7 @@ const SuggestedNews: React.FC = () => {
         </div>
         <div className="suggested-news__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.SuggestedNews}
+            thumbnailType={ThumbnailType.Suggested}
             thumbnailData={{
               id: "suggested-headline-3",
               title: "SUGGESTED HEADLINE 3",
@@ -42,7 +42,7 @@ const SuggestedNews: React.FC = () => {
         </div>
         <div className="suggested-news__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.SuggestedNews}
+            thumbnailType={ThumbnailType.Suggested}
             thumbnailData={{
               id: "suggested-headline-4",
               title: "SUGGESTED HEADLINE 4",
@@ -51,7 +51,7 @@ const SuggestedNews: React.FC = () => {
         </div>
         <div className="suggested-news__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.SuggestedNews}
+            thumbnailType={ThumbnailType.Suggested}
             thumbnailData={{
               id: "suggested-headline-5",
               title: "SUGGESTED HEADLINE 5",
@@ -60,7 +60,7 @@ const SuggestedNews: React.FC = () => {
         </div>
         <div className="suggested-news__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.SuggestedNews}
+            thumbnailType={ThumbnailType.Suggested}
             thumbnailData={{
               id: "suggested-headline-6",
               title: "SUGGESTED HEADLINE 6",

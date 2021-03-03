@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useRouteMatch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./NewsThumbnail.scss";
 
@@ -11,10 +11,10 @@ interface ThumbnailData {
 }
 
 export enum ThumbnailType {
-  NewsByCategory = "news-thumbnail--news-by-category",
-  PopularNews = "news-thumbnail--popular-news",
-  SuggestedNews = "news-thumbnail--suggested-news",
-  TopNews = "news-thumbnail--top-news",
+  Category = "category",
+  Popular = "popular",
+  Suggested = "suggested",
+  Headlines = "headlines",
 }
 
 interface NewsThumbnailProps {
@@ -27,12 +27,11 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
 ) => {
   const { thumbnailData, thumbnailType } = props;
   const { id, imageUrl, subtitle, title } = thumbnailData;
-  const match = useRouteMatch();
 
   return (
     <NavLink
-      className={`news-thumbnail ${thumbnailType}`}
-      to={`${match.path}/${id}`}
+      className={`news-thumbnail news-thumbnail--${thumbnailType}`}
+      to={`/top-news/${thumbnailType}/${id}`}
     >
       {imageUrl && (
         <img className="news-thumbnail__image" src={imageUrl} alt="news" />

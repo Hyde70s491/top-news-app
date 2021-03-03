@@ -15,7 +15,7 @@ const PopularNews: React.FC = () => {
       <div className="popular-news__entities">
         <div className="popular-news__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.PopularNews}
+            thumbnailType={ThumbnailType.Popular}
             thumbnailData={{
               id: "popular-headline-1",
               imageUrl: "https://picsum.photos/id/1015/600/600",
@@ -26,7 +26,7 @@ const PopularNews: React.FC = () => {
         </div>
         <div className="popular-news__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.PopularNews}
+            thumbnailType={ThumbnailType.Popular}
             thumbnailData={{
               id: "popular-headline-2",
               imageUrl: "https://picsum.photos/id/1015/600/600",
@@ -37,7 +37,7 @@ const PopularNews: React.FC = () => {
         </div>
         <div className="popular-news__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.PopularNews}
+            thumbnailType={ThumbnailType.Popular}
             thumbnailData={{
               id: "popular-headline-3",
               imageUrl: "https://picsum.photos/id/1015/600/600",
@@ -48,7 +48,7 @@ const PopularNews: React.FC = () => {
         </div>
         <div className="popular-news__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.PopularNews}
+            thumbnailType={ThumbnailType.Popular}
             thumbnailData={{
               id: "popular-headline-4",
               imageUrl: "https://picsum.photos/id/1015/600/600",
