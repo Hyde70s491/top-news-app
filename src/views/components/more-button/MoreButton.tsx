@@ -2,10 +2,22 @@ import React from "react";
 
 import "./MoreButton.scss";
 
-const MoreButton: React.FC = () => {
+interface MoreButtonProps {
+  readonly buttonCallback: () => void;
+}
+
+const MoreButton: React.FC<MoreButtonProps> = (
+  props: React.PropsWithChildren<MoreButtonProps>
+) => {
+  const { buttonCallback } = props;
+
   return (
     <div className="more-button-wrapper">
-      <button className="more-button-wrapper__action-button" type="button">
+      <button
+        className="more-button-wrapper__action-button"
+        type="button"
+        onClick={buttonCallback}
+      >
         <div className="more-button-wrapper__action-button__label">
           Read More
         </div>

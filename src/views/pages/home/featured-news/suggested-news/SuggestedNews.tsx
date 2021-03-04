@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import MoreButton from "../../../../components/more-button/MoreButton";
 import NewsThumbnail, {
@@ -8,6 +9,8 @@ import SectionTitle from "../../../../components/section-title/SectionTitle";
 import "./SuggestedNews.scss";
 
 const SuggestedNews: React.FC = () => {
+  const history = useHistory();
+
   return (
     <div className="suggested-news">
       <SectionTitle titleLabel="SUGGESTED" />
@@ -69,7 +72,7 @@ const SuggestedNews: React.FC = () => {
         </div>
       </div>
 
-      <MoreButton />
+      <MoreButton buttonCallback={() => history.push("/top-news/suggested")} />
     </div>
   );
 };
