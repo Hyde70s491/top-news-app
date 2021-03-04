@@ -46,7 +46,8 @@
     }
   }
 
-  &--popular {
+  &--popular,
+  &--dummy-category {
     .news-thumbnail__image {
       height: 50%;
       margin-bottom: 2rem;

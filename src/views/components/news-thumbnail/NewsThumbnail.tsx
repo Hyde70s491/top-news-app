@@ -1,5 +1,5 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 import "./NewsThumbnail.scss";
 
@@ -12,6 +12,7 @@ interface ThumbnailData {
 
 export enum ThumbnailType {
   Category = "category",
+  DummyCategory = "dummy-category",
   Popular = "popular",
   Suggested = "suggested",
   Headlines = "headlines",
@@ -27,11 +28,22 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
 ) => {
   const { thumbnailData, thumbnailType } = props;
   const { id, imageUrl, subtitle, title } = thumbnailData;
+  const location = useLocation();
+
+  const [thumbnailRoute, setThumbnailRoute] = useState("");
+
+  useEffect(() => {
+    if (location.pathname === "/top-news") {
+      setThumbnailRoute(`${location.pathname}/${thumbnailType}/${id}`);
+    } else {
+      setThumbnailRoute(`${location.pathname}/${id}`);
+    }
+  }, [id, location, thumbnailType]);
 
   return (
     <NavLink
       className={`news-thumbnail news-thumbnail--${thumbnailType}`}
-      to={`/top-news/${thumbnailType}/${id}`}
+      to={thumbnailRoute}
     >
       {imageUrl && (
         <img className="news-thumbnail__image" src={imageUrl} alt="news" />

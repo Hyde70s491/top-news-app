@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 
 import AdvertisingBanner from "./advertising-banner/AdvertisingBanner";
 import AppFooter from "../app-footer/AppFooter";
+import CategoryPage from "../../pages/category/Category";
 import FormattedDate from "./formatted-date/FormattedDate";
 import HomePage from "../../pages/home/Home";
 import "./AppBody.scss";
@@ -20,9 +21,7 @@ const AppBody: React.FC = () => {
           <Route exact path="/top-news/profile/:userId">
             User
           </Route>
-          <Route exact path="/top-news/:categoryId">
-            Category
-          </Route>
+          <Route exact path="/top-news/:categoryId" component={CategoryPage} />
           <Route exact path="/top-news/:categoryId/:newsId">
             News
           </Route>
