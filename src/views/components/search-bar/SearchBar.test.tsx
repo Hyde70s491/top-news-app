@@ -12,7 +12,7 @@ describe("<SearchBar /> test", () => {
       </MemoryRouter>
     );
 
-    const searchQuery = screen.getByText(/Search/i);
+    const searchQuery = screen.getByPlaceholderText(/Search.../i);
     expect(searchQuery).toBeInTheDocument();
 
     const searchIcon = screen.getByAltText(/search/i);

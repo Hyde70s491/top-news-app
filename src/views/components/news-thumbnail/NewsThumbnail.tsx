@@ -13,9 +13,10 @@ interface ThumbnailData {
 export enum ThumbnailType {
   Category = "category",
   DummyCategory = "dummy-category",
-  Popular = "popular",
-  Suggested = "suggested",
   Headlines = "headlines",
+  Popular = "popular",
+  Search = "search",
+  Suggested = "suggested",
 }
 
 interface NewsThumbnailProps {

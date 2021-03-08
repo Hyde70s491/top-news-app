@@ -6,7 +6,7 @@ import NewsThumbnail, { ThumbnailType } from "./NewsThumbnail";
 
 describe("<NewsThumbnail /> test", () => {
   it("renders expected entities", () => {
-    const thumbnailTypeProp = ThumbnailType.TopNews;
+    const thumbnailTypeProp = ThumbnailType.Headlines;
     const thumbnailDataProp = {
       id: "test-id",
       imageUrl: "https://test-url",

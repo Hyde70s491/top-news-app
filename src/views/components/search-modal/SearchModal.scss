@@ -1,0 +1,45 @@
+@import "../../../stylesheets/abstracts/variables.scss";
+
+.search-modal {
+  background-color: rgba(254, 187, 30, 0.95);
+  bottom: 0;
+  display: none;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+
+  &--visible {
+    display: block;
+  }
+
+  &__content {
+    margin: 0 auto;
+    max-width: 120rem;
+    padding: 5rem 1rem;
+    width: 100%;
+  }
+
+  &__entities {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    &__thumbnail {
+      margin-bottom: 1rem;
+      padding-bottom: calc(100% / 5 * 1.85);
+      position: relative;
+      width: calc((100% - 2rem) / 3);
+
+      &:nth-last-of-type(1),
+      &:nth-last-of-type(2),
+      &:nth-last-of-type(3) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
