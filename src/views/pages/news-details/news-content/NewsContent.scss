@@ -1,0 +1,79 @@
+@import "../../../../stylesheets/abstracts/variables.scss";
+
+.news-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6rem;
+  width: 100%;
+
+  &__title {
+    color: $color-black;
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__author {
+    color: $color-black;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  &__image {
+    height: auto;
+    margin: 1rem 0 5rem;
+    max-height: 25rem;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__subtitle {
+    color: $color-black;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 5rem;
+  }
+
+  &__text {
+    color: $color-black;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      padding-left: 5rem;
+    }
+  }
+
+  &__share-button {
+    margin-bottom: 0.5rem;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &__icon {
+      background-color: $color-black;
+      border: 0.1rem solid transparent;
+      height: 5rem;
+      width: 5rem;
+    }
+  }
+}

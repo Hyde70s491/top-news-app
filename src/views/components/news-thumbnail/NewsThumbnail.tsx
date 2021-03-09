@@ -16,6 +16,7 @@ export enum ThumbnailType {
   Headlines = "headlines",
   Popular = "popular",
   Search = "search",
+  Similar = "similar",
   Suggested = "suggested",
 }
 
@@ -34,7 +35,11 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
   const [thumbnailRoute, setThumbnailRoute] = useState("");
 
   useEffect(() => {
-    if (location.pathname === "/top-news") {
+    const routeFragments = location.pathname.split("/");
+
+    if (routeFragments.length === 4) {
+      setThumbnailRoute(`/${routeFragments[1]}/${routeFragments[2]}/${id}`);
+    } else if (location.pathname === "/top-news") {
       setThumbnailRoute(`${location.pathname}/${thumbnailType}/${id}`);
     } else {
       setThumbnailRoute(`${location.pathname}/${id}`);

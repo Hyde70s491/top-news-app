@@ -10,7 +10,8 @@
   right: 0;
   top: 0;
 
-  &--category {
+  &--category,
+  &--similar {
     .news-thumbnail__image {
       height: 75%;
       margin-bottom: 1rem;

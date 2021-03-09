@@ -6,6 +6,7 @@ import AppFooter from "../app-footer/AppFooter";
 import CategoryPage from "../../pages/category/Category";
 import FormattedDate from "./formatted-date/FormattedDate";
 import HomePage from "../../pages/home/Home";
+import NewsDetails from "../../pages/news-details/NewsDetails";
 import "./AppBody.scss";
 
 const AppBody: React.FC = () => {
@@ -22,9 +23,11 @@ const AppBody: React.FC = () => {
             User
           </Route>
           <Route exact path="/top-news/:categoryId" component={CategoryPage} />
-          <Route exact path="/top-news/:categoryId/:newsId">
-            News
-          </Route>
+          <Route
+            exact
+            path="/top-news/:categoryId/:newsId"
+            component={NewsDetails}
+          />
           <Route exact path="/">
             <Redirect to="/top-news" />
           </Route>
