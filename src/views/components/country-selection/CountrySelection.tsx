@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./CountrySelection.scss";
@@ -12,16 +12,27 @@ const CountrySelection: React.FC<CountrySelectionProps> = (
 ) => {
   const { selectionClassName } = props;
 
+  const [isDropdownVisible, updateDropdownVisibility] = useState(false);
+
+  const handleDropdownButtonClick = (): void => {
+    updateDropdownVisibility(false);
+  };
+
+  const handleToggleButtonClick = (): void => {
+    updateDropdownVisibility(!isDropdownVisible);
+  };
+
   return (
     <div className="country-selection">
       <div
         className={`country-selection-dropdown${
-          false ? " country-selection-dropdown--open" : ""
+          isDropdownVisible ? " country-selection-dropdown--open" : ""
         }${selectionClassName ? " " + selectionClassName : ""}`}
       >
         <button
           className="country-selection-dropdown__toggle-button"
           type="button"
+          onClick={handleToggleButtonClick}
         >
           <div className="country-selection-dropdown__toggle-button__indicator"></div>
           <img
@@ -35,6 +46,7 @@ const CountrySelection: React.FC<CountrySelectionProps> = (
           <button
             className="country-selection-dropdown__options__entity"
             type="button"
+            onClick={handleDropdownButtonClick}
           >
             <img
               className="country-selection-dropdown__country-image country-selection-dropdown__country-image--inverse"
