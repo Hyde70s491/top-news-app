@@ -1,37 +1,37 @@
-interface Country {
-  readonly id: string;
+export interface Country {
+  readonly flag: string;
   readonly name: string;
 }
 
-const countries: Country[] = [
-  {
-    id: "au",
+const countries: { [id: string]: Country } = {
+  au: {
+    flag: "/images/Australia.png",
     name: "Australia",
   },
-  {
-    id: "ca",
+  ca: {
+    flag: "/images/Canada.png",
     name: "Canada",
   },
-  {
-    id: "gb",
+  gb: {
+    flag: "/images/GreatBritain.png",
     name: "Great Britain",
   },
-  {
-    id: "ie",
+  ie: {
+    flag: "/images/Ireland.png",
     name: "Ireland",
   },
-  {
-    id: "nz",
+  nz: {
+    flag: "/images/NewZealand.png",
     name: "New Zealand",
   },
-  {
-    id: "us",
+  us: {
+    flag: "/images/UnitedStates.png",
     name: "United States",
   },
-  {
-    id: "za",
+  za: {
+    flag: "/images/SouthAfrica.png",
     name: "South Africa",
   },
-];
+};
 
 export default countries;

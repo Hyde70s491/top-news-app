@@ -1,3 +1,3 @@
-export interface parametersState {
-  readonly country: string | undefined;
+export interface ParametersState {
+  readonly country: string;
 }

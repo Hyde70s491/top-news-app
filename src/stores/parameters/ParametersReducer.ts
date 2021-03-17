@@ -1,13 +1,21 @@
-import { Action, Reducer } from "redux";
+import { Reducer } from "redux";
 
-import { parametersState } from "./ParametersModels";
+import ActionModel from "../../models/ActionModel";
+import { ParametersState } from "./ParametersModels";
 import { initialState } from "./ParametersState";
+import { UPDATE_COUNTRY, ParametersActionTypes } from "./ParametersActions";
 
 const parametersReducer: Reducer = (
-  state: parametersState = initialState,
-  action: Action
-): parametersState => {
+  state: ParametersState = initialState,
+  action: ActionModel<ParametersActionTypes>
+): ParametersState => {
   switch (action.type) {
+    case UPDATE_COUNTRY: {
+      return {
+        ...state,
+        country: action.payload!,
+      };
+    }
     default:
       return state;
   }

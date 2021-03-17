@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { Dispatch } from "redux";
 
+import { SelectedCountry } from "../../../selectors/constants/ConstantsSelectorModels";
+import { selectCountries } from "../../../selectors/constants/ConstantsSelectors";
+import { selectCountryImage } from "../../../selectors/parameters/ParametersSelectors";
+import { updateCountry } from "../../../stores/parameters/ParametersActions";
 import "./CountrySelection.scss";
 
 interface CountrySelectionProps {
@@ -12,9 +18,13 @@ const CountrySelection: React.FC<CountrySelectionProps> = (
 ) => {
   const { selectionClassName } = props;
 
+  const dispatch: Dispatch = useDispatch();
+  const countries: SelectedCountry[] = useSelector(selectCountries);
+  const selectedCountry: string = useSelector(selectCountryImage);
   const [isDropdownVisible, updateDropdownVisibility] = useState(false);
 
-  const handleDropdownButtonClick = (): void => {
+  const handleDropdownButtonClick = (countryId: string): void => {
+    dispatch(updateCountry(countryId));
     updateDropdownVisibility(false);
   };
 
@@ -37,26 +47,29 @@ const CountrySelection: React.FC<CountrySelectionProps> = (
           <div className="country-selection-dropdown__toggle-button__indicator"></div>
           <img
             className="country-selection-dropdown__country-image"
-            src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+            src={selectedCountry}
             alt="selected country"
           />
         </button>
 
         <div className="country-selection-dropdown__options">
-          <button
-            className="country-selection-dropdown__options__entity"
-            type="button"
-            onClick={handleDropdownButtonClick}
-          >
-            <img
-              className="country-selection-dropdown__country-image country-selection-dropdown__country-image--inverse"
-              src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
-              alt="available country"
-            />
-            <span className="country-selection-dropdown__options__entity__name">
-              Great Britain
-            </span>
-          </button>
+          {countries.map((country: SelectedCountry) => (
+            <button
+              className="country-selection-dropdown__options__entity"
+              type="button"
+              key={country.id}
+              onClick={() => handleDropdownButtonClick(country.id)}
+            >
+              <img
+                className="country-selection-dropdown__country-image"
+                src={country.flag}
+                alt="available country"
+              />
+              <span className="country-selection-dropdown__options__entity__name">
+                {country.name}
+              </span>
+            </button>
+          ))}
         </div>
       </div>
 
