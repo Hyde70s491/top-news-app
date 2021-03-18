@@ -6,9 +6,11 @@ import MoreButton from "./MoreButton";
 
 describe("<MoreButton /> test", () => {
   it("renders expected entities", () => {
+    const buttonCallbackProp = () => console.log("Test Callback");
+
     render(
       <MemoryRouter>
-        <MoreButton />
+        <MoreButton buttonCallback={buttonCallbackProp} />
       </MemoryRouter>
     );
 

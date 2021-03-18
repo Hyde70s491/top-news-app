@@ -9,6 +9,10 @@ const parametersReducer: Reducer = (
   state: ParametersState = initialState,
   action: ActionModel<ParametersActionTypes>
 ): ParametersState => {
+  if (action.error) {
+    return state;
+  }
+
   switch (action.type) {
     case UPDATE_COUNTRY: {
       return {
