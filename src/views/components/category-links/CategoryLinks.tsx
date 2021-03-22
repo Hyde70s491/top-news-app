@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
+import { selectCategories } from "../../../selectors/constants/ConstantsSelectors";
 import "./CategoryLinks.scss";
 
 interface CategoryLinksProps {
@@ -12,17 +14,22 @@ const CategoryLinks: React.FC<CategoryLinksProps> = (
 ) => {
   const { linksClassName } = props;
 
+  const availableCategories: string[] = useSelector(selectCategories);
+
   return (
     <div
       className={`category-links${linksClassName ? " " + linksClassName : ""}`}
     >
-      <NavLink
-        className={`category-links__entity${false ? " frozen-link" : ""}`}
-        activeClassName="category-links__entity--active"
-        to="/top-news/category1"
-      >
-        Category1
-      </NavLink>
+      {availableCategories.map((category: string) => (
+        <NavLink
+          className="category-links__entity"
+          activeClassName="category-links__entity--active"
+          key={category}
+          to={`/top-news/${category}`}
+        >
+          {category}
+        </NavLink>
+      ))}
     </div>
   );
 };

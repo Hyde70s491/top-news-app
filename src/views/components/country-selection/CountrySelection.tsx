@@ -73,10 +73,7 @@ const CountrySelection: React.FC<CountrySelectionProps> = (
         </div>
       </div>
 
-      <NavLink
-        className={`app-logo${false ? " frozen-link" : ""}`}
-        to="/top-news"
-      >
+      <NavLink className="app-logo" to="/top-news">
         TopNews
       </NavLink>
     </div>
