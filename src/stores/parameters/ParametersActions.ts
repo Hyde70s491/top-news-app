@@ -11,4 +11,4 @@ export const updateCountry = (countryId: string): ActionModel<string> => {
   };
 };
 
-export type ParametersActionTypes = typeof UPDATE_COUNTRY;
+export type ParametersActionTypes = string;

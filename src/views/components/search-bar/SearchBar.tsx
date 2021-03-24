@@ -1,5 +1,10 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "redux";
 
+import { ModalType } from "../../../stores/layout/LayoutModels";
+import { selectActiveModal } from "../../../selectors/layout/LayoutSelector";
+import { toggleModal } from "../../../stores/layout/LayoutActions";
 import "./SearchBar.scss";
 
 interface SearchBarProps {
@@ -11,8 +16,18 @@ const SearchBar: React.FC<SearchBarProps> = (
 ) => {
   const { barClassName } = props;
 
+  const dispatch: Dispatch = useDispatch();
+  const activeModal: ModalType | null = useSelector(selectActiveModal);
+
+  const handleSearchBarClick = (): void => {
+    if (!activeModal) dispatch(toggleModal(ModalType.Search));
+  };
+
   return (
-    <div className={`search-bar${barClassName ? " " + barClassName : ""}`}>
+    <div
+      className={`search-bar${barClassName ? " " + barClassName : ""}`}
+      onClick={handleSearchBarClick}
+    >
       <input className="search-bar__query" placeholder="Search..." />
       <button className="search-bar__button">
         <img

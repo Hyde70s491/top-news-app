@@ -1,10 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { Dispatch } from "redux";
 
 import MoreButton from "../../components/more-button/MoreButton";
 import NewsThumbnail, {
   ThumbnailType,
 } from "../../components/news-thumbnail/NewsThumbnail";
 import SearchBar from "../search-bar/SearchBar";
+
+import { toggleModal } from "../../../stores/layout/LayoutActions";
 import "./SearchModal.scss";
 
 interface SearchModalProps {
@@ -16,8 +20,22 @@ const SearchModal: React.FC<SearchModalProps> = (
 ) => {
   const { isVisible } = props;
 
+  const dispatch: Dispatch = useDispatch();
+
+  const handleCloseButtonClick = (): void => {
+    dispatch(toggleModal(null));
+  };
+
   return (
     <div className={`search-modal${isVisible ? " search-modal--visible" : ""}`}>
+      <button className="search-modal__button" onClick={handleCloseButtonClick}>
+        <img
+          className="search-modal__button__icon"
+          src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
+          alt="close"
+        />
+      </button>
+
       <div className="search-modal__content">
         <SearchBar barClassName="search-bar--modal" />
 
