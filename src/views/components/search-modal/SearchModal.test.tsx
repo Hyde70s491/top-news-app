@@ -1,21 +1,24 @@
 import React from "react";
+import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import SearchModal from "./SearchModal";
+import rootStore from "../../../stores/rootStore";
 
 describe("<SearchModal /> test", () => {
-  it("renders", () => {
+  it("renders expected entities", () => {
     const isVisibleProp = true;
 
     render(
-      <MemoryRouter>
-        <SearchModal isVisible={isVisibleProp} />
-      </MemoryRouter>
+      <Provider store={rootStore}>
+        <MemoryRouter>
+          <SearchModal isVisible={isVisibleProp} />
+        </MemoryRouter>
+      </Provider>
     );
 
-    const a = 1;
-
-    expect(a).toEqual(1);
+    const closeIcon = screen.getByAltText(/close/i);
+    expect(closeIcon).toBeInTheDocument();
   });
 });
