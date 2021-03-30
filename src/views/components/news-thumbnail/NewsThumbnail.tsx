@@ -7,7 +7,7 @@ interface ThumbnailData {
   readonly id: string;
   readonly imageUrl?: string;
   readonly subtitle?: string;
-  readonly title: string;
+  readonly title?: string;
 }
 
 export enum ThumbnailType {
