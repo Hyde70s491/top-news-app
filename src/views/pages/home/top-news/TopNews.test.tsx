@@ -1,15 +1,19 @@
 import React from "react";
+import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
 
 import TopNews from "./TopNews";
+import rootStore from "../../../../stores/rootStore";
 
 describe("<TopNews /> test", () => {
   it("renders", () => {
     render(
-      <MemoryRouter>
-        <TopNews />
-      </MemoryRouter>
+      <Provider store={rootStore}>
+        <MemoryRouter>
+          <TopNews />
+        </MemoryRouter>
+      </Provider>
     );
 
     const a = 1;
