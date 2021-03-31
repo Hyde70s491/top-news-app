@@ -3,7 +3,7 @@ import React from "react";
 import CategoryLinks from "../../components/category-links/CategoryLinks";
 import CountrySelection from "../../components/country-selection/CountrySelection";
 import SearchBar from "../../components/search-bar/SearchBar";
-import UserAdministration from "./user-administration/UserAdministration";
+// import UserAdministration from "./user-administration/UserAdministration";
 import "./AppHeader.scss";
 
 const AppHeader: React.FC = () => {
@@ -17,7 +17,7 @@ const AppHeader: React.FC = () => {
           <CategoryLinks />
         </div>
         <div className="app-header__content__segment app-header__content__segment--right">
-          <UserAdministration />
+          {/* <UserAdministration /> */}
           <SearchBar barClassName="search-bar--header" />
         </div>
       </div>
