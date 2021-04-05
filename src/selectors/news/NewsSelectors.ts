@@ -1,25 +1,42 @@
-import { createSelector, Selector } from "reselect";
-
 import NewsModel from "../../models/NewsModel";
 import StoreModel from "../../models/StoreModel";
-import { Headlines, SearchedNews } from "./NewsSelectorModels";
+import { CategoryNews, Headlines } from "./NewsSelectorModels";
 
-const selectHeadlines = (state: StoreModel): Headlines[] => {
-  return Object.entries(state.headlines.entities).map(
-    ([id, news]: [string, NewsModel]): Headlines => {
-      return {
-        id,
-        imageUrl: news.urlToImage,
-        title: news.title,
-      };
-    }
-  );
+export const selectTopBusinessNews = (state: StoreModel): Headlines[] => {
+  return Object.entries(state.business.entities)
+    .map(
+      ([id, news]: [string, NewsModel]): Headlines => {
+        return {
+          category: "business",
+          id,
+          imageUrl: news.urlToImage,
+          title: news.title,
+        };
+      }
+    )
+    .filter((headline: Headlines, index: number): boolean => index < 4);
 };
 
-export const selectSearchedNews = (state: StoreModel): SearchedNews[] => {
+export const selectTopHeadlines = (state: StoreModel): Headlines[] => {
+  return Object.entries(state.headlines.entities)
+    .map(
+      ([id, news]: [string, NewsModel]): Headlines => {
+        return {
+          category: "headlines",
+          id,
+          imageUrl: news.urlToImage,
+          title: news.title,
+        };
+      }
+    )
+    .filter((headline: Headlines, index: number): boolean => index < 3);
+};
+
+export const selectSearchedNews = (state: StoreModel): CategoryNews[] => {
   return Object.entries(state.search.entities).map(
-    ([id, news]: [string, NewsModel]): SearchedNews => {
+    ([id, news]: [string, NewsModel]): CategoryNews => {
       return {
+        category: "search",
         id,
         imageUrl: news.urlToImage,
         title: news.title,
@@ -28,12 +45,3 @@ export const selectSearchedNews = (state: StoreModel): SearchedNews[] => {
     }
   );
 };
-
-export const selectTopHeadlines: Selector<
-  StoreModel,
-  Headlines[]
-> = createSelector(selectHeadlines, (headlines: Headlines[]): Headlines[] => {
-  return headlines.filter(
-    (headline: Headlines, index: number): boolean => index < 3
-  );
-});

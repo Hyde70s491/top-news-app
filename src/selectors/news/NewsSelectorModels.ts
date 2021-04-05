@@ -1,12 +1,14 @@
-export interface Headlines {
-  id: string;
-  imageUrl: string | undefined;
-  title: string | undefined;
-}
-
-export interface SearchedNews {
+export interface CategoryNews {
+  category: string;
   id: string;
   imageUrl: string | undefined;
   title: string | undefined;
   subtitle: string | undefined;
+}
+
+export interface Headlines {
+  category: string;
+  id: string;
+  imageUrl: string | undefined;
+  title: string | undefined;
 }

@@ -2,10 +2,10 @@ import { Reducer } from "redux";
 
 import ActionModel from "../../models/ActionModel";
 import NewsCategoryStateModel from "../../models/NewsCategoryStateModel";
-import { initiaState } from "./HeadlinesState";
+import { initialState } from "./BusinessState";
 
-const HeadlinesReducer: Reducer = (
-  state: NewsCategoryStateModel = initiaState,
+const businessReducer: Reducer = (
+  state: NewsCategoryStateModel = initialState,
   action: ActionModel<undefined>
 ): NewsCategoryStateModel => {
   if (action.error) {
@@ -18,4 +18,4 @@ const HeadlinesReducer: Reducer = (
   }
 };
 
-export default HeadlinesReducer;
+export default businessReducer;

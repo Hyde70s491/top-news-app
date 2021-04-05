@@ -15,8 +15,9 @@ const Category: React.FC = () => {
       <div className="category-page__entities">
         <div className="category-page__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.DummyCategory}
+            thumbnailType={ThumbnailType.CategoryDetails}
             thumbnailData={{
+              category: "dummy",
               id: "dummy-category-headline-1",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "DUMMY CATEGORY HEADLINE 1",
@@ -26,8 +27,9 @@ const Category: React.FC = () => {
         </div>
         <div className="category-page__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.DummyCategory}
+            thumbnailType={ThumbnailType.CategoryDetails}
             thumbnailData={{
+              category: "dummy",
               id: "dummy-category-headline-2",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "DUMMY CATEGORY HEADLINE 2",
@@ -37,8 +39,9 @@ const Category: React.FC = () => {
         </div>
         <div className="category-page__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.DummyCategory}
+            thumbnailType={ThumbnailType.CategoryDetails}
             thumbnailData={{
+              category: "dummy",
               id: "dummy-category-headline-3",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "DUMMY CATEGORY HEADLINE 3",
@@ -48,8 +51,9 @@ const Category: React.FC = () => {
         </div>
         <div className="category-page__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.DummyCategory}
+            thumbnailType={ThumbnailType.CategoryDetails}
             thumbnailData={{
+              category: "dummy",
               id: "dummy-category-headline-4",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "DUMMY CATEGORY HEADLINE 4",
@@ -59,8 +63,9 @@ const Category: React.FC = () => {
         </div>
         <div className="category-page__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.DummyCategory}
+            thumbnailType={ThumbnailType.CategoryDetails}
             thumbnailData={{
+              category: "dummy",
               id: "dummy-category-headline-5",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "DUMMY CATEGORY HEADLINE 5",
@@ -70,8 +75,9 @@ const Category: React.FC = () => {
         </div>
         <div className="category-page__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.DummyCategory}
+            thumbnailType={ThumbnailType.CategoryDetails}
             thumbnailData={{
+              category: "dummy",
               id: "dummy-category-headline-6",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "DUMMY CATEGORY HEADLINE 6",
@@ -81,8 +87,9 @@ const Category: React.FC = () => {
         </div>
         <div className="category-page__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.DummyCategory}
+            thumbnailType={ThumbnailType.CategoryDetails}
             thumbnailData={{
+              category: "dummy",
               id: "dummy-category-headline-7",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "DUMMY CATEGORY HEADLINE 7",
@@ -92,8 +99,9 @@ const Category: React.FC = () => {
         </div>
         <div className="category-page__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.DummyCategory}
+            thumbnailType={ThumbnailType.CategoryDetails}
             thumbnailData={{
+              category: "dummy",
               id: "dummy-category-headline-8",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "DUMMY CATEGORY HEADLINE 8",
@@ -103,8 +111,9 @@ const Category: React.FC = () => {
         </div>
         <div className="category-page__entities__thumbnail">
           <NewsThumbnail
-            thumbnailType={ThumbnailType.DummyCategory}
+            thumbnailType={ThumbnailType.CategoryDetails}
             thumbnailData={{
+              category: "dummy",
               id: "dummy-category-headline-9",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "DUMMY CATEGORY HEADLINE 9",

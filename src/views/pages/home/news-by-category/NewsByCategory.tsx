@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import MoreButton from "../../../components/more-button/MoreButton";
@@ -6,59 +7,41 @@ import NewsThumbnail, {
   ThumbnailType,
 } from "../../../components/news-thumbnail/NewsThumbnail";
 import SectionTitle from "../../../components/section-title/SectionTitle";
+
+import { Category } from "../../../../constants/Categories";
+import { Headlines } from "../../../../selectors/news/NewsSelectorModels";
 import "./NewsByCategory.scss";
 
-const NewsByCategory: React.FC = () => {
+interface NewsByCategoryProps {
+  readonly category: Category;
+}
+
+const NewsByCategory: React.FC<NewsByCategoryProps> = (
+  props: React.PropsWithChildren<NewsByCategoryProps>
+) => {
+  const { category } = props;
+
   const history = useHistory();
+  const topCategoryNews = useSelector(category.selector);
 
   return (
     <div className="news-by-category">
-      <SectionTitle titleLabel="CATEGORY" />
+      <SectionTitle titleLabel={category.name} />
 
       <div className="news-by-category__entities">
-        <div className="news-by-category__entities__thumbnail">
-          <NewsThumbnail
-            thumbnailType={ThumbnailType.Category}
-            thumbnailData={{
-              id: "news-by-category-1",
-              imageUrl: "https://picsum.photos/id/1015/600/600",
-              title: "NEWS BY CATEGORY HEADLINE 1",
-            }}
-          />
-        </div>
-        <div className="news-by-category__entities__thumbnail">
-          <NewsThumbnail
-            thumbnailType={ThumbnailType.Category}
-            thumbnailData={{
-              id: "news-by-category-2",
-              imageUrl: "https://picsum.photos/id/1015/600/600",
-              title: "NEWS BY CATEGORY HEADLINE 2",
-            }}
-          />
-        </div>
-        <div className="news-by-category__entities__thumbnail">
-          <NewsThumbnail
-            thumbnailType={ThumbnailType.Category}
-            thumbnailData={{
-              id: "news-by-category-3",
-              imageUrl: "https://picsum.photos/id/1015/600/600",
-              title: "NEWS BY CATEGORY HEADLINE 3",
-            }}
-          />
-        </div>
-        <div className="news-by-category__entities__thumbnail">
-          <NewsThumbnail
-            thumbnailType={ThumbnailType.Category}
-            thumbnailData={{
-              id: "news-by-category-4",
-              imageUrl: "https://picsum.photos/id/1015/600/600",
-              title: "NEWS BY CATEGORY HEADLINE 4",
-            }}
-          />
-        </div>
+        {topCategoryNews.map((news: Headlines) => (
+          <div className="news-by-category__entities__thumbnail" key={news.id}>
+            <NewsThumbnail
+              thumbnailType={ThumbnailType.Category}
+              thumbnailData={news}
+            />
+          </div>
+        ))}
       </div>
 
-      <MoreButton buttonCallback={() => history.push("/top-news/category")} />
+      <MoreButton
+        buttonCallback={() => history.push(`/top-news/${category.name}`)}
+      />
     </div>
   );
 };

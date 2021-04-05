@@ -20,6 +20,7 @@ const SimilarNews: React.FC = () => {
           <NewsThumbnail
             thumbnailType={ThumbnailType.Similar}
             thumbnailData={{
+              category: "similar",
               id: "similar-news-1",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "SIMILAR NEWS HEADLINE 1",
@@ -30,6 +31,7 @@ const SimilarNews: React.FC = () => {
           <NewsThumbnail
             thumbnailType={ThumbnailType.Similar}
             thumbnailData={{
+              category: "similar",
               id: "similar-news-2",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "SIMILAR NEWS HEADLINE 2",
@@ -40,6 +42,7 @@ const SimilarNews: React.FC = () => {
           <NewsThumbnail
             thumbnailType={ThumbnailType.Similar}
             thumbnailData={{
+              category: "similar",
               id: "similar-news-3",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "SIMILAR NEWS HEADLINE 3",
@@ -50,6 +53,7 @@ const SimilarNews: React.FC = () => {
           <NewsThumbnail
             thumbnailType={ThumbnailType.Similar}
             thumbnailData={{
+              category: "similar",
               id: "similar-news-4",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "SIMILAR NEWS HEADLINE 4",

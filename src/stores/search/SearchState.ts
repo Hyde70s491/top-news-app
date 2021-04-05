@@ -1,6 +1,6 @@
-import { SearchState } from "./SearchModels";
+import NewsCategoryStateModel from "../../models/NewsCategoryStateModel";
 
-export const initialState: SearchState = {
+export const initialState: NewsCategoryStateModel = {
   entities: {
     "search-headline-1": {
       author: "",

@@ -1,13 +1,13 @@
 import { Reducer } from "redux";
 
 import ActionModel from "../../models/ActionModel";
-import { SearchState } from "./SearchModels";
+import NewsCategoryStateModel from "../../models/NewsCategoryStateModel";
 import { initialState } from "./SearchState";
 
 const SearchReducer: Reducer = (
-  state: SearchState = initialState,
+  state: NewsCategoryStateModel = initialState,
   action: ActionModel<undefined>
-): SearchState => {
+): NewsCategoryStateModel => {
   if (action.error) {
     return state;
   }

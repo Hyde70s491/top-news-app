@@ -1,11 +1,41 @@
-const categories: { [id: string]: string } = {
-  business: "business",
-  entertainment: "entertainment",
-  general: "general",
-  health: "health",
-  science: "science",
-  sports: "sports",
-  technology: "technology",
+import StoreModel from "../models/StoreModel";
+import { Headlines } from "../selectors/news/NewsSelectorModels";
+import { selectTopBusinessNews } from "../selectors/news/NewsSelectors";
+
+export interface Category {
+  readonly name: string;
+  readonly selector: (state: StoreModel) => Headlines[];
+}
+
+const categories: { [id: string]: Category } = {
+  business: {
+    name: "business",
+    selector: selectTopBusinessNews,
+  },
+  entertainment: {
+    name: "entertainment",
+    selector: selectTopBusinessNews,
+  },
+  general: {
+    name: "general",
+    selector: selectTopBusinessNews,
+  },
+  health: {
+    name: "health",
+    selector: selectTopBusinessNews,
+  },
+  science: {
+    name: "science",
+    selector: selectTopBusinessNews,
+  },
+  sports: {
+    name: "sports",
+    selector: selectTopBusinessNews,
+  },
+  technology: {
+    name: "technology",
+    selector: selectTopBusinessNews,
+  },
 };
 
 export default categories;

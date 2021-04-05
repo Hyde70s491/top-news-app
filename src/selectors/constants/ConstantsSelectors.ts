@@ -1,9 +1,22 @@
-import categories from "../../constants/Categories";
+import categories, { Category } from "../../constants/Categories";
 import countries, { Country } from "../../constants/Countries";
 import { SelectedCountry } from "./ConstantsSelectorModels";
 
-export const selectCategories = (): string[] => {
-  return Object.values(categories);
+export const selectCategories = (): Category[] => {
+  return Object.entries(categories).map(
+    ([id, category]: [string, Category]): Category => {
+      return {
+        name: category.name,
+        selector: category.selector,
+      };
+    }
+  );
+};
+
+export const selectCategoryNames = (): string[] => {
+  return Object.entries(categories).map(
+    ([id, category]: [string, Category]): string => category.name
+  );
 };
 
 export const selectCountries = (): SelectedCountry[] => {

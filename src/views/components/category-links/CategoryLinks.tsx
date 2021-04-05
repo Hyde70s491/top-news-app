@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-import { selectCategories } from "../../../selectors/constants/ConstantsSelectors";
+import { selectCategoryNames } from "../../../selectors/constants/ConstantsSelectors";
 import "./CategoryLinks.scss";
 
 interface CategoryLinksProps {
@@ -14,7 +14,7 @@ const CategoryLinks: React.FC<CategoryLinksProps> = (
 ) => {
   const { linksClassName } = props;
 
-  const availableCategories: string[] = useSelector(selectCategories);
+  const availableCategories: string[] = useSelector(selectCategoryNames);
 
   return (
     <div

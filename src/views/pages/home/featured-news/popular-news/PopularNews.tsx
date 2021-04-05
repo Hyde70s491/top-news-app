@@ -20,6 +20,7 @@ const PopularNews: React.FC = () => {
           <NewsThumbnail
             thumbnailType={ThumbnailType.Popular}
             thumbnailData={{
+              category: "popular",
               id: "popular-headline-1",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "POPULAR HEADLINE 1",
@@ -31,6 +32,7 @@ const PopularNews: React.FC = () => {
           <NewsThumbnail
             thumbnailType={ThumbnailType.Popular}
             thumbnailData={{
+              category: "popular",
               id: "popular-headline-2",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "POPULAR HEADLINE 2",
@@ -42,6 +44,7 @@ const PopularNews: React.FC = () => {
           <NewsThumbnail
             thumbnailType={ThumbnailType.Popular}
             thumbnailData={{
+              category: "popular",
               id: "popular-headline-3",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "POPULAR HEADLINE 3",
@@ -53,6 +56,7 @@ const PopularNews: React.FC = () => {
           <NewsThumbnail
             thumbnailType={ThumbnailType.Popular}
             thumbnailData={{
+              category: "popular",
               id: "popular-headline-4",
               imageUrl: "https://picsum.photos/id/1015/600/600",
               title: "POPULAR HEADLINE 4",

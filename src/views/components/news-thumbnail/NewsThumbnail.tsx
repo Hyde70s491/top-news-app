@@ -4,6 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import "./NewsThumbnail.scss";
 
 interface ThumbnailData {
+  readonly category: string;
   readonly id: string;
   readonly imageUrl?: string;
   readonly subtitle?: string;
@@ -12,7 +13,7 @@ interface ThumbnailData {
 
 export enum ThumbnailType {
   Category = "category",
-  DummyCategory = "dummy-category",
+  CategoryDetails = "category-details",
   Headlines = "headlines",
   Popular = "popular",
   Search = "search",
@@ -29,7 +30,7 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
   props: React.PropsWithChildren<NewsThumbnailProps>
 ) => {
   const { thumbnailData, thumbnailType } = props;
-  const { id, imageUrl, subtitle, title } = thumbnailData;
+  const { category, id, imageUrl, subtitle, title } = thumbnailData;
   const location = useLocation();
 
   const [thumbnailRoute, setThumbnailRoute] = useState("");
@@ -40,11 +41,11 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
     if (routeFragments.length === 4) {
       setThumbnailRoute(`/${routeFragments[1]}/${routeFragments[2]}/${id}`);
     } else if (location.pathname === "/top-news") {
-      setThumbnailRoute(`${location.pathname}/${thumbnailType}/${id}`);
+      setThumbnailRoute(`${location.pathname}/${category}/${id}`);
     } else {
       setThumbnailRoute(`${location.pathname}/${id}`);
     }
-  }, [id, location, thumbnailType]);
+  }, [category, id, location]);
 
   return (
     <NavLink

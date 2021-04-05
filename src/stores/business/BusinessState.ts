@@ -1,121 +1,121 @@
 import NewsCategoryStateModel from "../../models/NewsCategoryStateModel";
 
-export const initiaState: NewsCategoryStateModel = {
+export const initialState: NewsCategoryStateModel = {
   entities: {
-    "top-headline-1": {
+    "business-headline-1": {
       author: "",
       content: "",
-      description: "Subtitle of top headline 1",
+      description: "Subtitle of business headline 1",
       publishedAt: "",
       source: {
         id: "",
         name: "",
       },
-      title: "TOP HEADLINE 1",
+      title: "BUSINESS HEADLINE 1",
       url: "",
       urlToImage: "https://picsum.photos/id/1015/600/600",
     },
-    "top-headline-2": {
+    "business-headline-2": {
       author: "",
       content: "",
-      description: "Subtitle of top headline 2",
+      description: "Subtitle of business headline 2",
       publishedAt: "",
       source: {
         id: "",
         name: "",
       },
-      title: "TOP HEADLINE 2",
+      title: "BUSINESS HEADLINE 2",
       url: "",
       urlToImage: "https://picsum.photos/id/1015/600/600",
     },
-    "top-headline-3": {
+    "business-headline-3": {
       author: "",
       content: "",
-      description: "Subtitle of top headline 3",
+      description: "Subtitle of business headline 3",
       publishedAt: "",
       source: {
         id: "",
         name: "",
       },
-      title: "TOP HEADLINE 3",
+      title: "BUSINESS HEADLINE 3",
       url: "",
       urlToImage: "https://picsum.photos/id/1015/600/600",
     },
-    "top-headline-4": {
+    "business-headline-4": {
       author: "",
       content: "",
-      description: "Subtitle of top headline 4",
+      description: "Subtitle of business headline 4",
       publishedAt: "",
       source: {
         id: "",
         name: "",
       },
-      title: "TOP HEADLINE 4",
+      title: "BUSINESS HEADLINE 4",
       url: "",
       urlToImage: "https://picsum.photos/id/1015/600/600",
     },
-    "top-headline-5": {
+    "business-headline-5": {
       author: "",
       content: "",
-      description: "Subtitle of top headline 5",
+      description: "Subtitle of business headline 5",
       publishedAt: "",
       source: {
         id: "",
         name: "",
       },
-      title: "TOP HEADLINE 5",
+      title: "BUSINESS HEADLINE 5",
       url: "",
       urlToImage: "https://picsum.photos/id/1015/600/600",
     },
-    "top-headline-6": {
+    "business-headline-6": {
       author: "",
       content: "",
-      description: "Subtitle of top headline 6",
+      description: "Subtitle of business headline 6",
       publishedAt: "",
       source: {
         id: "",
         name: "",
       },
-      title: "TOP HEADLINE 6",
+      title: "BUSINESS HEADLINE 6",
       url: "",
       urlToImage: "https://picsum.photos/id/1015/600/600",
     },
-    "top-headline-7": {
+    "business-headline-7": {
       author: "",
       content: "",
-      description: "Subtitle of top headline 7",
+      description: "Subtitle of business headline 7",
       publishedAt: "",
       source: {
         id: "",
         name: "",
       },
-      title: "TOP HEADLINE 7",
+      title: "BUSINESS HEADLINE 7",
       url: "",
       urlToImage: "https://picsum.photos/id/1015/600/600",
     },
-    "top-headline-8": {
+    "business-headline-8": {
       author: "",
       content: "",
-      description: "Subtitle of top headline 8",
+      description: "Subtitle of business headline 8",
       publishedAt: "",
       source: {
         id: "",
         name: "",
       },
-      title: "TOP HEADLINE 8",
+      title: "BUSINESS HEADLINE 8",
       url: "",
       urlToImage: "https://picsum.photos/id/1015/600/600",
     },
-    "top-headline-9": {
+    "business-headline-9": {
       author: "",
       content: "",
-      description: "Subtitle of top headline 9",
+      description: "Subtitle of business headline 9",
       publishedAt: "",
       source: {
         id: "",
         name: "",
       },
-      title: "TOP HEADLINE 9",
+      title: "BUSINESS HEADLINE 9",
       url: "",
       urlToImage: "https://picsum.photos/id/1015/600/600",
     },
