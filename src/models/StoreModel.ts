@@ -7,6 +7,7 @@ interface StoreModel {
   readonly entertainment: NewsCategoryStateModel;
   readonly general: NewsCategoryStateModel;
   readonly headlines: NewsCategoryStateModel;
+  readonly health: NewsCategoryStateModel;
   readonly layout: LayoutState;
   readonly parameters: ParametersState;
   readonly search: NewsCategoryStateModel;

@@ -4,6 +4,7 @@ import {
   selectTopBusinessNews,
   selectTopEntertainmentNews,
   selectTopGeneralNews,
+  selectTopHealthNews,
 } from "../selectors/news/NewsSelectors";
 
 export interface Category {
@@ -26,7 +27,7 @@ const categories: { [id: string]: Category } = {
   },
   health: {
     name: "health",
-    selector: selectTopBusinessNews,
+    selector: selectTopHealthNews,
   },
   science: {
     name: "science",
