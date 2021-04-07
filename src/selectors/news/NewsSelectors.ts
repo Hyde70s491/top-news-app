@@ -17,6 +17,21 @@ export const selectTopBusinessNews = (state: StoreModel): Headlines[] => {
     .filter((headline: Headlines, index: number): boolean => index < 4);
 };
 
+export const selectTopEntertainmentNews = (state: StoreModel): Headlines[] => {
+  return Object.entries(state.entertainment.entities)
+    .map(
+      ([id, news]: [string, NewsModel]): Headlines => {
+        return {
+          category: "entertainment",
+          id,
+          imageUrl: news.urlToImage,
+          title: news.title,
+        };
+      }
+    )
+    .filter((headline: Headlines, index: number): boolean => index < 4);
+};
+
 export const selectTopHeadlines = (state: StoreModel): Headlines[] => {
   return Object.entries(state.headlines.entities)
     .map(
