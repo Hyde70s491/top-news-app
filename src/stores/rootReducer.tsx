@@ -9,6 +9,7 @@ import layoutReducer from "./layout/LayoutReducer";
 import parametersReducer from "./parameters/ParametersReducer";
 import scienceReducer from "./science/ScienceReducer";
 import searchReducer from "./search/SearchReducer";
+import sportsReducer from "./sports/SportsReducer";
 
 const rootReducer: Reducer = combineReducers({
   business: businessReducer,
@@ -20,6 +21,7 @@ const rootReducer: Reducer = combineReducers({
   parameters: parametersReducer,
   science: scienceReducer,
   search: searchReducer,
+  sports: sportsReducer,
 });
 
 export default rootReducer;

@@ -12,6 +12,7 @@ interface StoreModel {
   readonly parameters: ParametersState;
   readonly science: NewsCategoryStateModel;
   readonly search: NewsCategoryStateModel;
+  readonly sports: NewsCategoryStateModel;
 }
 
 export default StoreModel;

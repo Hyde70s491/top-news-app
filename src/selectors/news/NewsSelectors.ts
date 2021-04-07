@@ -105,3 +105,18 @@ export const selectTopScienceNews = (state: StoreModel): Headlines[] => {
     )
     .filter((headline: Headlines, index: number): boolean => index < 4);
 };
+
+export const selectTopSportsNews = (state: StoreModel): Headlines[] => {
+  return Object.entries(state.sports.entities)
+    .map(
+      ([id, news]: [string, NewsModel]): Headlines => {
+        return {
+          category: "sports",
+          id,
+          imageUrl: news.urlToImage,
+          title: news.title,
+        };
+      }
+    )
+    .filter((headline: Headlines, index: number): boolean => index < 4);
+};
