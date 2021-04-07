@@ -2,6 +2,20 @@ import NewsModel from "../../models/NewsModel";
 import StoreModel from "../../models/StoreModel";
 import { CategoryNews, Headlines } from "./NewsSelectorModels";
 
+export const selectSearchedNews = (state: StoreModel): CategoryNews[] => {
+  return Object.entries(state.search.entities).map(
+    ([id, news]: [string, NewsModel]): CategoryNews => {
+      return {
+        category: "search",
+        id,
+        imageUrl: news.urlToImage,
+        title: news.title,
+        subtitle: news.description,
+      };
+    }
+  );
+};
+
 export const selectTopBusinessNews = (state: StoreModel): Headlines[] => {
   return Object.entries(state.business.entities)
     .map(
@@ -74,19 +88,20 @@ export const selectTopHealthNews = (state: StoreModel): Headlines[] => {
         };
       }
     )
-    .filter((headline: Headlines, index: number): boolean => index < 3);
+    .filter((headline: Headlines, index: number): boolean => index < 4);
 };
 
-export const selectSearchedNews = (state: StoreModel): CategoryNews[] => {
-  return Object.entries(state.search.entities).map(
-    ([id, news]: [string, NewsModel]): CategoryNews => {
-      return {
-        category: "search",
-        id,
-        imageUrl: news.urlToImage,
-        title: news.title,
-        subtitle: news.description,
-      };
-    }
-  );
+export const selectTopScienceNews = (state: StoreModel): Headlines[] => {
+  return Object.entries(state.science.entities)
+    .map(
+      ([id, news]: [string, NewsModel]): Headlines => {
+        return {
+          category: "science",
+          id,
+          imageUrl: news.urlToImage,
+          title: news.title,
+        };
+      }
+    )
+    .filter((headline: Headlines, index: number): boolean => index < 4);
 };

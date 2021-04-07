@@ -7,6 +7,7 @@ import headlinesReducer from "./headlines/HeadlinesReducer";
 import healthReducer from "./health/HealthReducer";
 import layoutReducer from "./layout/LayoutReducer";
 import parametersReducer from "./parameters/ParametersReducer";
+import scienceReducer from "./science/ScienceReducer";
 import searchReducer from "./search/SearchReducer";
 
 const rootReducer: Reducer = combineReducers({
@@ -17,6 +18,7 @@ const rootReducer: Reducer = combineReducers({
   health: healthReducer,
   layout: layoutReducer,
   parameters: parametersReducer,
+  science: scienceReducer,
   search: searchReducer,
 });
 

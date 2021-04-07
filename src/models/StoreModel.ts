@@ -10,6 +10,7 @@ interface StoreModel {
   readonly health: NewsCategoryStateModel;
   readonly layout: LayoutState;
   readonly parameters: ParametersState;
+  readonly science: NewsCategoryStateModel;
   readonly search: NewsCategoryStateModel;
 }
 
