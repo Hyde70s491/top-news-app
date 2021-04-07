@@ -13,6 +13,7 @@ interface StoreModel {
   readonly science: NewsCategoryStateModel;
   readonly search: NewsCategoryStateModel;
   readonly sports: NewsCategoryStateModel;
+  readonly technology: NewsCategoryStateModel;
 }
 
 export default StoreModel;

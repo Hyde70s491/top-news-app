@@ -120,3 +120,18 @@ export const selectTopSportsNews = (state: StoreModel): Headlines[] => {
     )
     .filter((headline: Headlines, index: number): boolean => index < 4);
 };
+
+export const selectTopTechnologyNews = (state: StoreModel): Headlines[] => {
+  return Object.entries(state.technology.entities)
+    .map(
+      ([id, news]: [string, NewsModel]): Headlines => {
+        return {
+          category: "technology",
+          id,
+          imageUrl: news.urlToImage,
+          title: news.title,
+        };
+      }
+    )
+    .filter((headline: Headlines, index: number): boolean => index < 4);
+};

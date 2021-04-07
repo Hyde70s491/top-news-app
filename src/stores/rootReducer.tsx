@@ -10,6 +10,7 @@ import parametersReducer from "./parameters/ParametersReducer";
 import scienceReducer from "./science/ScienceReducer";
 import searchReducer from "./search/SearchReducer";
 import sportsReducer from "./sports/SportsReducer";
+import technologyReducer from "./technology/TechnologyReducer";
 
 const rootReducer: Reducer = combineReducers({
   business: businessReducer,
@@ -22,6 +23,7 @@ const rootReducer: Reducer = combineReducers({
   science: scienceReducer,
   search: searchReducer,
   sports: sportsReducer,
+  technology: technologyReducer,
 });
 
 export default rootReducer;
