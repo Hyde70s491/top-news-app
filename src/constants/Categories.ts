@@ -3,6 +3,7 @@ import { Headlines } from "../selectors/news/NewsSelectorModels";
 import {
   selectTopBusinessNews,
   selectTopEntertainmentNews,
+  selectTopGeneralNews,
 } from "../selectors/news/NewsSelectors";
 
 export interface Category {
@@ -21,7 +22,7 @@ const categories: { [id: string]: Category } = {
   },
   general: {
     name: "general",
-    selector: selectTopBusinessNews,
+    selector: selectTopGeneralNews,
   },
   health: {
     name: "health",

@@ -24,6 +24,10 @@ const NewsByCategory: React.FC<NewsByCategoryProps> = (
   const history = useHistory();
   const topCategoryNews = useSelector(category.selector);
 
+  if (!topCategoryNews.length) {
+    return null;
+  }
+
   return (
     <div className="news-by-category">
       <SectionTitle titleLabel={category.name} />
