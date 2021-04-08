@@ -1,6 +1,32 @@
 import NewsModel from "../../models/NewsModel";
+import NewsCategoryStateModel from "../../models/NewsCategoryStateModel";
 import StoreModel from "../../models/StoreModel";
 import { CategoryNews, Headlines } from "./NewsSelectorModels";
+
+export const selectCategoryNews = (state: StoreModel): CategoryNews[] => {
+  const categoryParameter: string | null = state.parameters.category;
+
+  if (!categoryParameter) {
+    return [];
+  }
+
+  const categoryState: NewsCategoryStateModel = Object.entries(state).filter(
+    ([id, partialState]: [string, NewsCategoryStateModel]): boolean =>
+      id === categoryParameter
+  )[0][1];
+
+  return Object.entries(categoryState.entities).map(
+    ([id, news]: [string, NewsModel]): CategoryNews => {
+      return {
+        category: categoryParameter,
+        id,
+        imageUrl: news.urlToImage,
+        title: news.title,
+        subtitle: news.description,
+      };
+    }
+  );
+};
 
 export const selectSearchedNews = (state: StoreModel): CategoryNews[] => {
   return Object.entries(state.search.entities).map(

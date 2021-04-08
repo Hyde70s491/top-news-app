@@ -3,7 +3,7 @@ import React from "react";
 import "./SectionTitle.scss";
 
 interface SectionTitleProps {
-  readonly titleLabel: string;
+  readonly titleLabel: string | null;
 }
 
 const SectionTitle: React.FC<SectionTitleProps> = (
@@ -11,7 +11,7 @@ const SectionTitle: React.FC<SectionTitleProps> = (
 ) => {
   const { titleLabel } = props;
 
-  return <div className="section-title">{titleLabel}</div>;
+  return <div className="section-title">{titleLabel ? titleLabel : ""}</div>;
 };
 
 export default SectionTitle;

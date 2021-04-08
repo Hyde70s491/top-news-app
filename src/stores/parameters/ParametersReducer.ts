@@ -3,7 +3,11 @@ import { Reducer } from "redux";
 import ActionModel from "../../models/ActionModel";
 import { ParametersState } from "./ParametersModels";
 import { initialState } from "./ParametersState";
-import { UPDATE_COUNTRY, ParametersActionTypes } from "./ParametersActions";
+import {
+  SET_CATEGORY,
+  UPDATE_COUNTRY,
+  ParametersActionTypes,
+} from "./ParametersActions";
 
 const parametersReducer: Reducer = (
   state: ParametersState = initialState,
@@ -14,6 +18,12 @@ const parametersReducer: Reducer = (
   }
 
   switch (action.type) {
+    case SET_CATEGORY: {
+      return {
+        ...state,
+        category: action.payload!,
+      };
+    }
     case UPDATE_COUNTRY: {
       return {
         ...state,

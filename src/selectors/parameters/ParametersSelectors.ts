@@ -16,6 +16,9 @@ const selectImage = (countryId: string): string => {
   return "/images/GreatBritain.png";
 };
 
+export const selectCategory = (state: StoreModel): string | null =>
+  state.parameters.category;
+
 const selectCountry = (state: StoreModel): string => state.parameters.country;
 
 export const selectCountryImage: Selector<StoreModel, string> = createSelector(
