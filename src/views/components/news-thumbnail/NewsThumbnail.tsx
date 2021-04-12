@@ -3,7 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 
 import "./NewsThumbnail.scss";
 
-interface ThumbnailData {
+export interface ThumbnailData {
   readonly category: string;
   readonly id: string;
   readonly imageUrl?: string;
@@ -31,9 +31,9 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
 ) => {
   const { thumbnailData, thumbnailType } = props;
   const { category, id, imageUrl, subtitle, title } = thumbnailData;
-  const location = useLocation();
 
-  const [thumbnailRoute, setThumbnailRoute] = useState("");
+  const location = useLocation();
+  const [thumbnailRoute, setThumbnailRoute] = useState<string>("");
 
   useEffect(() => {
     const routeFragments = location.pathname.split("/");
@@ -47,10 +47,15 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
     }
   }, [category, id, location]);
 
+  const handleThumbnailClick = (): void => {
+    sessionStorage.setItem("newsData", JSON.stringify(thumbnailData));
+  };
+
   return (
     <NavLink
       className={`news-thumbnail news-thumbnail--${thumbnailType}`}
       to={thumbnailRoute}
+      onClick={handleThumbnailClick}
     >
       {imageUrl && (
         <img className="news-thumbnail__image" src={imageUrl} alt="news" />

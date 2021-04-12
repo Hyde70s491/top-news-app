@@ -21,7 +21,9 @@ const CountrySelection: React.FC<CountrySelectionProps> = (
   const dispatch: Dispatch = useDispatch();
   const countries: SelectedCountry[] = useSelector(selectCountries);
   const selectedCountry: string = useSelector(selectCountryImage);
-  const [isDropdownVisible, updateDropdownVisibility] = useState(false);
+  const [isDropdownVisible, updateDropdownVisibility] = useState<boolean>(
+    false
+  );
 
   const handleDropdownButtonClick = (countryId: string): void => {
     dispatch(updateCountry(countryId));
