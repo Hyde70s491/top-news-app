@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 
-import { ThumbnailData } from "../../../components/news-thumbnail/NewsThumbnail";
+import { NewsData } from "../../../../selectors/news/NewsSelectorModels";
 import "./NewsContent.scss";
 
 const NewsContent: React.FC = () => {
-  const [newsData, setNewsData] = useState<ThumbnailData>();
+  const [newsData, setNewsData] = useState<NewsData>();
 
   useEffect(() => {
     const storagedNewsData: string | null = sessionStorage.getItem("newsData");
 
     if (storagedNewsData) {
-      const parsedNewsData: ThumbnailData = JSON.parse(storagedNewsData);
+      const parsedNewsData: NewsData = JSON.parse(storagedNewsData);
       setNewsData(parsedNewsData);
     }
   }, [setNewsData]);
@@ -18,7 +18,7 @@ const NewsContent: React.FC = () => {
   return (
     <div className="news-content">
       <span className="news-content__title">{newsData?.title}</span>
-      <span className="news-content__author">Author: Firstname Lastname</span>
+      <span className="news-content__author">{newsData?.author}</span>
       <img
         className="news-content__image"
         src={newsData?.imageUrl}
@@ -28,7 +28,7 @@ const NewsContent: React.FC = () => {
       <div className="news-content__body">
         <div className="news-content__body__left">
           <span className="news-content__subtitle">{newsData?.subtitle}</span>
-          <span className="news-content__text">News Details Text</span>
+          <span className="news-content__text">{newsData?.text}</span>
         </div>
 
         <div className="news-content__body__right">

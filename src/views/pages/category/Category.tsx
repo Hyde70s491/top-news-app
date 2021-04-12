@@ -9,7 +9,7 @@ import NewsThumbnail, {
 } from "../../components/news-thumbnail/NewsThumbnail";
 import SectionTitle from "../../components/section-title/SectionTitle";
 
-import { CategoryNews } from "../../../selectors/news/NewsSelectorModels";
+import { NewsData } from "../../../selectors/news/NewsSelectorModels";
 import { selectCategoryNews } from "../../../selectors/news/NewsSelectors";
 import { selectCategory } from "../../../selectors/parameters/ParametersSelectors";
 import { setCategory } from "../../../stores/parameters/ParametersActions";
@@ -19,7 +19,7 @@ const Category: React.FC = () => {
   const dispatch: Dispatch = useDispatch();
   const location = useLocation();
   const category: string | null = useSelector(selectCategory);
-  const categoryNews: CategoryNews[] = useSelector(selectCategoryNews);
+  const categoryNews: NewsData[] = useSelector(selectCategoryNews);
 
   useEffect(() => {
     const currentLocation = location.pathname.split("/")[2];
@@ -31,7 +31,7 @@ const Category: React.FC = () => {
       <SectionTitle titleLabel={category} />
 
       <div className="category-page__entities">
-        {categoryNews.map((news: CategoryNews) => (
+        {categoryNews.map((news: NewsData) => (
           <div className="category-page__entities__thumbnail" key={news.id}>
             <NewsThumbnail
               thumbnailType={ThumbnailType.CategoryDetails}

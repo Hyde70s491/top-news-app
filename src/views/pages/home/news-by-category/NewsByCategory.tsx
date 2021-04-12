@@ -9,7 +9,7 @@ import NewsThumbnail, {
 import SectionTitle from "../../../components/section-title/SectionTitle";
 
 import { Category } from "../../../../constants/Categories";
-import { Headlines } from "../../../../selectors/news/NewsSelectorModels";
+import { NewsData } from "../../../../selectors/news/NewsSelectorModels";
 import "./NewsByCategory.scss";
 
 interface NewsByCategoryProps {
@@ -33,7 +33,7 @@ const NewsByCategory: React.FC<NewsByCategoryProps> = (
       <SectionTitle titleLabel={category.name} />
 
       <div className="news-by-category__entities">
-        {topCategoryNews.map((news: Headlines) => (
+        {topCategoryNews.map((news: NewsData) => (
           <div className="news-by-category__entities__thumbnail" key={news.id}>
             <NewsThumbnail
               thumbnailType={ThumbnailType.Category}

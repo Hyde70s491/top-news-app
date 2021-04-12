@@ -23,6 +23,10 @@
       font-size: 1.8rem;
       font-weight: 600;
     }
+
+    .news-thumbnail__subtitle {
+      display: none;
+    }
   }
 
   &--headlines {
@@ -44,6 +48,10 @@
       font-size: 3.2rem;
       font-weight: 600;
       text-shadow: 0 1rem 1rem $color-black;
+    }
+
+    .news-thumbnail__subtitle {
+      display: none;
     }
   }
 

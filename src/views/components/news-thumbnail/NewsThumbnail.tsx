@@ -3,7 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 
 import "./NewsThumbnail.scss";
 
-export interface ThumbnailData {
+interface ThumbnailData {
   readonly category: string;
   readonly id: string;
   readonly imageUrl?: string;
