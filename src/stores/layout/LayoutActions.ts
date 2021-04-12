@@ -13,5 +13,3 @@ export const toggleModal = (
     payload: param,
   };
 };
-
-export type LayoutActionTypes = ModalType | null;

@@ -3,11 +3,11 @@ import { Reducer } from "redux";
 import ActionModel from "../../models/ActionModel";
 import { LayoutState } from "./LayoutModels";
 import { initialState } from "./LayoutState";
-import { TOGGLE_MODAL, LayoutActionTypes } from "./LayoutActions";
+import { TOGGLE_MODAL } from "./LayoutActions";
 
 const layoutReducer: Reducer = (
   state: LayoutState = initialState,
-  action: ActionModel<LayoutActionTypes>
+  action: ActionModel<any>
 ): LayoutState => {
   if (action.error) {
     return state;
@@ -17,7 +17,7 @@ const layoutReducer: Reducer = (
     case TOGGLE_MODAL: {
       return {
         ...state,
-        activeModal: action.payload!,
+        activeModal: action.payload,
       };
     }
     default:

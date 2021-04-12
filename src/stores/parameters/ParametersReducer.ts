@@ -5,13 +5,13 @@ import { ParametersState } from "./ParametersModels";
 import { initialState } from "./ParametersState";
 import {
   SET_CATEGORY,
+  SET_NEWS_DATA,
   UPDATE_COUNTRY,
-  ParametersActionTypes,
 } from "./ParametersActions";
 
 const parametersReducer: Reducer = (
   state: ParametersState = initialState,
-  action: ActionModel<ParametersActionTypes>
+  action: ActionModel<any>
 ): ParametersState => {
   if (action.error) {
     return state;
@@ -21,13 +21,19 @@ const parametersReducer: Reducer = (
     case SET_CATEGORY: {
       return {
         ...state,
-        category: action.payload!,
+        category: action.payload,
+      };
+    }
+    case SET_NEWS_DATA: {
+      return {
+        ...state,
+        newsData: action.payload,
       };
     }
     case UPDATE_COUNTRY: {
       return {
         ...state,
-        country: action.payload!,
+        country: action.payload,
       };
     }
     default:

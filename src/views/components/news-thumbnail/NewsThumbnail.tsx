@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
+import { Dispatch } from "redux";
 
+import { setNewsData } from "../../../stores/parameters/ParametersActions";
 import "./NewsThumbnail.scss";
 
 interface ThumbnailData {
@@ -32,6 +35,7 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
   const { thumbnailData, thumbnailType } = props;
   const { category, id, imageUrl, subtitle, title } = thumbnailData;
 
+  const dispatch: Dispatch = useDispatch();
   const location = useLocation();
   const [thumbnailRoute, setThumbnailRoute] = useState<string>("");
 
@@ -49,6 +53,7 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
 
   const handleThumbnailClick = (): void => {
     sessionStorage.setItem("newsData", JSON.stringify(thumbnailData));
+    dispatch(setNewsData(null));
   };
 
   return (

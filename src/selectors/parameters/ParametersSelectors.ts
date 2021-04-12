@@ -2,6 +2,7 @@ import { createSelector, Selector } from "reselect";
 
 import countries, { Country } from "../../constants/Countries";
 import StoreModel from "../../models/StoreModel";
+import { NewsData } from "../news/NewsSelectorModels";
 
 const selectImage = (countryId: string): string => {
   const selectedCountry: [string, Country] | undefined = Object.entries(
@@ -25,3 +26,6 @@ export const selectCountryImage: Selector<StoreModel, string> = createSelector(
   selectCountry,
   selectImage
 );
+
+export const selectNewsData = (state: StoreModel): NewsData | null =>
+  state.parameters.newsData;
