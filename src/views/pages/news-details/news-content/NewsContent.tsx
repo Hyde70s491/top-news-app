@@ -23,7 +23,7 @@ const NewsContent: React.FC = () => {
   return (
     <div className="news-content">
       <span className="news-content__title">{newsData?.title}</span>
-      <span className="news-content__author">{newsData?.author}</span>
+      <span className="news-content__author">Author: {newsData?.author}</span>
       <img
         className="news-content__image"
         src={newsData?.imageUrl}

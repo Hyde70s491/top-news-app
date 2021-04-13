@@ -1,5 +1,9 @@
-import { SET_CATEGORY, UPDATE_COUNTRY } from "../ParametersActions";
-import { setCategory, updateCountry } from "../ParametersActions";
+import {
+  SET_CATEGORY,
+  SET_NEWS_DATA,
+  UPDATE_COUNTRY,
+} from "../ParametersActions";
+import { setCategory, setNewsData, updateCountry } from "../ParametersActions";
 
 describe("ParametersActions test", () => {
   it("creates an action to set category parameter", () => {
@@ -10,6 +14,24 @@ describe("ParametersActions test", () => {
     };
 
     expect(setCategory(categoryName)).toEqual(expectedAction);
+  });
+
+  it("creates an action to set newsData parameter", () => {
+    const newsData = {
+      author: "Test Author",
+      category: "Test Category",
+      id: "Test Id",
+      imageUrl: "https://Test",
+      subtitle: "Test Subtitle",
+      text: "Test Text",
+      title: "Test Title",
+    };
+    const expectedAction = {
+      type: SET_NEWS_DATA,
+      payload: newsData,
+    };
+
+    expect(setNewsData(newsData)).toEqual(expectedAction);
   });
 
   it("creates an action to update country parameter", () => {

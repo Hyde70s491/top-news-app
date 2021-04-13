@@ -1,13 +1,16 @@
 import React from "react";
+import { Provider } from "react-redux";
 import { MemoryRouter } from "react-router-dom";
 import { render, screen } from "@testing-library/react";
 
 import NewsThumbnail, { ThumbnailType } from "./NewsThumbnail";
+import rootStore from "../../../stores/rootStore";
 
 describe("<NewsThumbnail /> test", () => {
   it("renders expected entities", () => {
     const thumbnailTypeProp = ThumbnailType.Headlines;
     const thumbnailDataProp = {
+      category: "test category",
       id: "test-id",
       imageUrl: "https://test-url",
       subtitle: "Test Subtitle",
@@ -15,12 +18,14 @@ describe("<NewsThumbnail /> test", () => {
     };
 
     render(
-      <MemoryRouter>
-        <NewsThumbnail
-          thumbnailType={thumbnailTypeProp}
-          thumbnailData={thumbnailDataProp}
-        />
-      </MemoryRouter>
+      <Provider store={rootStore}>
+        <MemoryRouter>
+          <NewsThumbnail
+            thumbnailType={thumbnailTypeProp}
+            thumbnailData={thumbnailDataProp}
+          />
+        </MemoryRouter>
+      </Provider>
     );
 
     const thumbnailImage = screen.getByAltText(/news/i);

@@ -1,4 +1,8 @@
-import { SET_CATEGORY, UPDATE_COUNTRY } from "../ParametersActions";
+import {
+  SET_CATEGORY,
+  SET_NEWS_DATA,
+  UPDATE_COUNTRY,
+} from "../ParametersActions";
 import parametersReducer from "../ParametersReducer";
 
 describe("parametersReducer test", () => {
@@ -6,6 +10,7 @@ describe("parametersReducer test", () => {
     expect(parametersReducer(undefined, { type: "" })).toEqual({
       category: null,
       country: "gb",
+      newsData: null,
     });
   });
 
@@ -20,6 +25,30 @@ describe("parametersReducer test", () => {
     ).toEqual({
       category: categoryName,
       country: "gb",
+      newsData: null,
+    });
+  });
+
+  it("handles SET_NEWS_DATA action", () => {
+    const newsData = {
+      author: "Test Author",
+      category: "Test Category",
+      id: "Test Id",
+      imageUrl: "https://Test",
+      subtitle: "Test Subtitle",
+      text: "Test Text",
+      title: "Test Title",
+    };
+
+    expect(
+      parametersReducer(undefined, {
+        type: SET_NEWS_DATA,
+        payload: newsData,
+      })
+    ).toEqual({
+      category: null,
+      country: "gb",
+      newsData,
     });
   });
 
@@ -31,6 +60,7 @@ describe("parametersReducer test", () => {
     ).toEqual({
       category: null,
       country: countryId,
+      newsData: null,
     });
   });
 });
