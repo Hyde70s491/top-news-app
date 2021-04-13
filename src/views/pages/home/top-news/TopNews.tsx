@@ -8,13 +8,13 @@ import NewsThumbnail, {
 } from "../../../components/news-thumbnail/NewsThumbnail";
 import SectionTitle from "../../../components/section-title/SectionTitle";
 
-import { NewsData } from "../../../../selectors/news/NewsSelectorModels";
+import NewsDataModel from "../../../../models/NewsDataModel";
 import { selectTopHeadlines } from "../../../../selectors/news/NewsSelectors";
 import "./TopNews.scss";
 
 const TopNews: React.FC = () => {
   const history = useHistory();
-  const topHeadlines: NewsData[] = useSelector(selectTopHeadlines);
+  const topHeadlines: NewsDataModel[] = useSelector(selectTopHeadlines);
 
   return (
     <div className="top-news">

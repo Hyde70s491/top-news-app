@@ -1,5 +1,5 @@
 import ActionModel from "../../models/ActionModel";
-import { NewsData } from "../../selectors/news/NewsSelectorModels";
+import NewsDataModel from "../../models/NewsDataModel";
 
 const PARAMETERS_ACTION_DOMAIN: string = "parameters";
 
@@ -15,8 +15,8 @@ export const setCategory = (categoryName: string): ActionModel<string> => {
 };
 
 export const setNewsData = (
-  newsData: NewsData | null
-): ActionModel<NewsData | null> => {
+  newsData: NewsDataModel | null
+): ActionModel<NewsDataModel | null> => {
   return {
     type: SET_NEWS_DATA,
     payload: newsData,

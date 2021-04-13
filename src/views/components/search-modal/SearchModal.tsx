@@ -8,7 +8,7 @@ import NewsThumbnail, {
 } from "../../components/news-thumbnail/NewsThumbnail";
 import SearchBar from "../search-bar/SearchBar";
 
-import { NewsData } from "../../../selectors/news/NewsSelectorModels";
+import NewsDataModel from "../../../models/NewsDataModel";
 import { selectSearchedNews } from "../../../selectors/news/NewsSelectors";
 import { toggleModal } from "../../../stores/layout/LayoutActions";
 import "./SearchModal.scss";
@@ -24,7 +24,7 @@ const SearchModal: React.FC<SearchModalProps> = (
 
   const dispatch: Dispatch = useDispatch();
 
-  const searchedNews: NewsData[] = useSelector(selectSearchedNews);
+  const searchedNews: NewsDataModel[] = useSelector(selectSearchedNews);
 
   const closeSearchModal = (): void => {
     dispatch(toggleModal(null));
@@ -44,7 +44,7 @@ const SearchModal: React.FC<SearchModalProps> = (
         <SearchBar barClassName="search-bar--modal" />
 
         <div className="search-modal__entities">
-          {searchedNews.map((news: NewsData) => (
+          {searchedNews.map((news: NewsDataModel) => (
             <div
               className="search-modal__entities__thumbnail"
               key={news.id}

@@ -1,7 +1,7 @@
-import { NewsData } from "../../selectors/news/NewsSelectorModels";
+import NewsDataModel from "../../models/NewsDataModel";
 
 export interface ParametersState {
   readonly category: string | null;
   readonly country: string;
-  readonly newsData: NewsData | null;
+  readonly newsData: NewsDataModel | null;
 }

@@ -1,5 +1,5 @@
 import StoreModel from "../models/StoreModel";
-import { NewsData } from "../selectors/news/NewsSelectorModels";
+import NewsDataModel from "../models/NewsDataModel";
 import {
   selectTopBusinessNews,
   selectTopEntertainmentNews,
@@ -12,7 +12,7 @@ import {
 
 export interface Category {
   readonly name: string;
-  readonly selector: (state: StoreModel) => NewsData[];
+  readonly selector: (state: StoreModel) => NewsDataModel[];
 }
 
 const categories: { [id: string]: Category } = {

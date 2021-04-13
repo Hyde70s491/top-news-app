@@ -1,4 +1,4 @@
-export interface NewsData {
+interface NewsDataModel {
   author: string | undefined;
   category: string;
   id: string;
@@ -7,3 +7,5 @@ export interface NewsData {
   subtitle: string | undefined;
   text: string | undefined;
 }
+
+export default NewsDataModel;

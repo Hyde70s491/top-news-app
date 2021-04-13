@@ -1,9 +1,9 @@
 import NewsModel from "../../models/NewsModel";
 import NewsCategoryStateModel from "../../models/NewsCategoryStateModel";
 import StoreModel from "../../models/StoreModel";
-import { NewsData } from "./NewsSelectorModels";
+import NewsDataModel from "../../models/NewsDataModel";
 
-export const selectCategoryNews = (state: StoreModel): NewsData[] => {
+export const selectCategoryNews = (state: StoreModel): NewsDataModel[] => {
   const categoryParameter: string | null = state.parameters.category;
 
   if (!categoryParameter) {
@@ -16,7 +16,7 @@ export const selectCategoryNews = (state: StoreModel): NewsData[] => {
   )[0][1];
 
   return Object.entries(categoryState.entities).map(
-    ([id, news]: [string, NewsModel]): NewsData => {
+    ([id, news]: [string, NewsModel]): NewsDataModel => {
       return {
         author: news.author,
         category: categoryParameter,
@@ -30,9 +30,9 @@ export const selectCategoryNews = (state: StoreModel): NewsData[] => {
   );
 };
 
-export const selectSearchedNews = (state: StoreModel): NewsData[] => {
+export const selectSearchedNews = (state: StoreModel): NewsDataModel[] => {
   return Object.entries(state.search.entities).map(
-    ([id, news]: [string, NewsModel]): NewsData => {
+    ([id, news]: [string, NewsModel]): NewsDataModel => {
       return {
         author: news.author,
         category: "search",
@@ -46,10 +46,10 @@ export const selectSearchedNews = (state: StoreModel): NewsData[] => {
   );
 };
 
-export const selectTopBusinessNews = (state: StoreModel): NewsData[] => {
+export const selectTopBusinessNews = (state: StoreModel): NewsDataModel[] => {
   return Object.entries(state.business.entities)
     .map(
-      ([id, news]: [string, NewsModel]): NewsData => {
+      ([id, news]: [string, NewsModel]): NewsDataModel => {
         return {
           author: news.author,
           category: "business",
@@ -61,13 +61,15 @@ export const selectTopBusinessNews = (state: StoreModel): NewsData[] => {
         };
       }
     )
-    .filter((headline: NewsData, index: number): boolean => index < 4);
+    .filter((headline: NewsDataModel, index: number): boolean => index < 4);
 };
 
-export const selectTopEntertainmentNews = (state: StoreModel): NewsData[] => {
+export const selectTopEntertainmentNews = (
+  state: StoreModel
+): NewsDataModel[] => {
   return Object.entries(state.entertainment.entities)
     .map(
-      ([id, news]: [string, NewsModel]): NewsData => {
+      ([id, news]: [string, NewsModel]): NewsDataModel => {
         return {
           author: news.author,
           category: "entertainment",
@@ -79,13 +81,13 @@ export const selectTopEntertainmentNews = (state: StoreModel): NewsData[] => {
         };
       }
     )
-    .filter((headline: NewsData, index: number): boolean => index < 4);
+    .filter((headline: NewsDataModel, index: number): boolean => index < 4);
 };
 
-export const selectTopGeneralNews = (state: StoreModel): NewsData[] => {
+export const selectTopGeneralNews = (state: StoreModel): NewsDataModel[] => {
   return Object.entries(state.general.entities)
     .map(
-      ([id, news]: [string, NewsModel]): NewsData => {
+      ([id, news]: [string, NewsModel]): NewsDataModel => {
         return {
           author: news.author,
           category: "general",
@@ -97,13 +99,13 @@ export const selectTopGeneralNews = (state: StoreModel): NewsData[] => {
         };
       }
     )
-    .filter((headline: NewsData, index: number): boolean => index < 4);
+    .filter((headline: NewsDataModel, index: number): boolean => index < 4);
 };
 
-export const selectTopHeadlines = (state: StoreModel): NewsData[] => {
+export const selectTopHeadlines = (state: StoreModel): NewsDataModel[] => {
   return Object.entries(state.headlines.entities)
     .map(
-      ([id, news]: [string, NewsModel]): NewsData => {
+      ([id, news]: [string, NewsModel]): NewsDataModel => {
         return {
           author: news.author,
           category: "headlines",
@@ -115,13 +117,13 @@ export const selectTopHeadlines = (state: StoreModel): NewsData[] => {
         };
       }
     )
-    .filter((headline: NewsData, index: number): boolean => index < 3);
+    .filter((headline: NewsDataModel, index: number): boolean => index < 3);
 };
 
-export const selectTopHealthNews = (state: StoreModel): NewsData[] => {
+export const selectTopHealthNews = (state: StoreModel): NewsDataModel[] => {
   return Object.entries(state.health.entities)
     .map(
-      ([id, news]: [string, NewsModel]): NewsData => {
+      ([id, news]: [string, NewsModel]): NewsDataModel => {
         return {
           author: news.author,
           category: "health",
@@ -133,13 +135,13 @@ export const selectTopHealthNews = (state: StoreModel): NewsData[] => {
         };
       }
     )
-    .filter((headline: NewsData, index: number): boolean => index < 4);
+    .filter((headline: NewsDataModel, index: number): boolean => index < 4);
 };
 
-export const selectTopScienceNews = (state: StoreModel): NewsData[] => {
+export const selectTopScienceNews = (state: StoreModel): NewsDataModel[] => {
   return Object.entries(state.science.entities)
     .map(
-      ([id, news]: [string, NewsModel]): NewsData => {
+      ([id, news]: [string, NewsModel]): NewsDataModel => {
         return {
           author: news.author,
           category: "science",
@@ -151,13 +153,13 @@ export const selectTopScienceNews = (state: StoreModel): NewsData[] => {
         };
       }
     )
-    .filter((headline: NewsData, index: number): boolean => index < 4);
+    .filter((headline: NewsDataModel, index: number): boolean => index < 4);
 };
 
-export const selectTopSportsNews = (state: StoreModel): NewsData[] => {
+export const selectTopSportsNews = (state: StoreModel): NewsDataModel[] => {
   return Object.entries(state.sports.entities)
     .map(
-      ([id, news]: [string, NewsModel]): NewsData => {
+      ([id, news]: [string, NewsModel]): NewsDataModel => {
         return {
           author: news.author,
           category: "sports",
@@ -169,13 +171,13 @@ export const selectTopSportsNews = (state: StoreModel): NewsData[] => {
         };
       }
     )
-    .filter((headline: NewsData, index: number): boolean => index < 4);
+    .filter((headline: NewsDataModel, index: number): boolean => index < 4);
 };
 
-export const selectTopTechnologyNews = (state: StoreModel): NewsData[] => {
+export const selectTopTechnologyNews = (state: StoreModel): NewsDataModel[] => {
   return Object.entries(state.technology.entities)
     .map(
-      ([id, news]: [string, NewsModel]): NewsData => {
+      ([id, news]: [string, NewsModel]): NewsDataModel => {
         return {
           author: news.author,
           category: "technology",
@@ -187,5 +189,5 @@ export const selectTopTechnologyNews = (state: StoreModel): NewsData[] => {
         };
       }
     )
-    .filter((headline: NewsData, index: number): boolean => index < 4);
+    .filter((headline: NewsDataModel, index: number): boolean => index < 4);
 };
