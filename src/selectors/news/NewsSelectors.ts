@@ -28,6 +28,23 @@ export const selectTopBusinessNews = (state: StoreModel): NewsDataModel[] => {
   );
 };
 
+export const selectTopCategoryNews = (state: StoreModel): NewsDataModel[] => {
+  const categoryParameter: string | null = state.parameters.category;
+
+  if (!categoryParameter) {
+    return [];
+  }
+
+  const categoryState: NewsCategoryStateModel = Object.entries(state).filter(
+    ([id, partialState]: [string, NewsCategoryStateModel]): boolean =>
+      id === categoryParameter
+  )[0][1];
+
+  return getNewsData(categoryState.entities, categoryParameter).filter(
+    (headline: NewsDataModel, index: number): boolean => index < 4
+  );
+};
+
 export const selectTopEntertainmentNews = (
   state: StoreModel
 ): NewsDataModel[] => {

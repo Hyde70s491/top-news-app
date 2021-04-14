@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import MoreButton from "../../../components/more-button/MoreButton";
@@ -6,63 +7,35 @@ import NewsThumbnail, {
   ThumbnailType,
 } from "../../../components/news-thumbnail/NewsThumbnail";
 import SectionTitle from "../../../components/section-title/SectionTitle";
+
+import NewsDataModel from "../../../../models/NewsDataModel";
+import { selectTopCategoryNews } from "../../../../selectors/news/NewsSelectors";
 import "./SimilarNews.scss";
 
 const SimilarNews: React.FC = () => {
   const history = useHistory();
+  const similarNews: NewsDataModel[] = useSelector(selectTopCategoryNews);
 
   return (
     <div className="similar-news">
       <SectionTitle titleLabel="SIMILAR NEWS" />
 
       <div className="similar-news__entities">
-        <div className="similar-news__entities__thumbnail">
-          <NewsThumbnail
-            thumbnailType={ThumbnailType.Similar}
-            thumbnailData={{
-              category: "similar",
-              id: "similar-news-1",
-              imageUrl: "https://picsum.photos/id/1015/600/600",
-              title: "SIMILAR NEWS HEADLINE 1",
-            }}
-          />
-        </div>
-        <div className="similar-news__entities__thumbnail">
-          <NewsThumbnail
-            thumbnailType={ThumbnailType.Similar}
-            thumbnailData={{
-              category: "similar",
-              id: "similar-news-2",
-              imageUrl: "https://picsum.photos/id/1015/600/600",
-              title: "SIMILAR NEWS HEADLINE 2",
-            }}
-          />
-        </div>
-        <div className="similar-news__entities__thumbnail">
-          <NewsThumbnail
-            thumbnailType={ThumbnailType.Similar}
-            thumbnailData={{
-              category: "similar",
-              id: "similar-news-3",
-              imageUrl: "https://picsum.photos/id/1015/600/600",
-              title: "SIMILAR NEWS HEADLINE 3",
-            }}
-          />
-        </div>
-        <div className="similar-news__entities__thumbnail">
-          <NewsThumbnail
-            thumbnailType={ThumbnailType.Similar}
-            thumbnailData={{
-              category: "similar",
-              id: "similar-news-4",
-              imageUrl: "https://picsum.photos/id/1015/600/600",
-              title: "SIMILAR NEWS HEADLINE 4",
-            }}
-          />
-        </div>
+        {similarNews.map((news: NewsDataModel) => (
+          <div className="similar-news__entities__thumbnail" key={news.id}>
+            <NewsThumbnail
+              thumbnailType={ThumbnailType.Similar}
+              thumbnailData={news}
+            />
+          </div>
+        ))}
       </div>
 
-      <MoreButton buttonCallback={() => history.push("/top-news/category")} />
+      <MoreButton
+        buttonCallback={() =>
+          history.push(`/top-news/${similarNews[0].category}`)
+        }
+      />
     </div>
   );
 };
