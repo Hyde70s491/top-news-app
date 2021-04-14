@@ -1,24 +1,12 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Dispatch } from "redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
 import NewsDataModel from "../../../../models/NewsDataModel";
 import { selectNewsData } from "../../../../selectors/parameters/ParametersSelectors";
-import { setNewsData } from "../../../../stores/parameters/ParametersActions";
 import "./NewsContent.scss";
 
 const NewsContent: React.FC = () => {
-  const dispatch: Dispatch = useDispatch();
   const newsData: NewsDataModel | null = useSelector(selectNewsData);
-
-  useEffect(() => {
-    const storagedNewsData: string | null = sessionStorage.getItem("newsData");
-
-    if (storagedNewsData && !newsData) {
-      const parsedNewsData: NewsDataModel = JSON.parse(storagedNewsData);
-      dispatch(setNewsData(parsedNewsData));
-    }
-  }, [dispatch, newsData]);
 
   return (
     <div className="news-content">
