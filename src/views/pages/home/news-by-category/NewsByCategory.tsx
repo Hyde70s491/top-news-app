@@ -7,8 +7,10 @@ import NewsThumbnail, {
   ThumbnailType,
 } from "../../../components/news-thumbnail/NewsThumbnail";
 import SectionTitle from "../../../components/section-title/SectionTitle";
+import StatusIndicator from "../../../components/status-indicator/StatusIndicator";
 
 import { Category } from "../../../../constants/Categories";
+import { ApiStatus } from "../../../../models/NewsCategoryStateModel";
 import NewsDataModel from "../../../../models/NewsDataModel";
 import "./NewsByCategory.scss";
 
@@ -22,30 +24,36 @@ const NewsByCategory: React.FC<NewsByCategoryProps> = (
   const { category } = props;
 
   const history = useHistory();
-  const topCategoryNews = useSelector(category.selector);
-
-  if (!topCategoryNews.length) {
-    return null;
-  }
+  const apiStatus: ApiStatus = useSelector(category.apiStatusSelector);
+  const topCategoryNews: NewsDataModel[] = useSelector(category.selector);
 
   return (
     <div className="news-by-category">
       <SectionTitle titleLabel={category.name} />
 
-      <div className="news-by-category__entities">
-        {topCategoryNews.map((news: NewsDataModel) => (
-          <div className="news-by-category__entities__thumbnail" key={news.id}>
-            <NewsThumbnail
-              thumbnailType={ThumbnailType.Category}
-              thumbnailData={news}
-            />
-          </div>
-        ))}
-      </div>
+      <StatusIndicator apiStatus={apiStatus} />
 
-      <MoreButton
-        buttonCallback={() => history.push(`/top-news/${category.name}`)}
-      />
+      {topCategoryNews.length ? (
+        <div className="news-by-category__entities">
+          {topCategoryNews.map((news: NewsDataModel) => (
+            <div
+              className="news-by-category__entities__thumbnail"
+              key={news.id}
+            >
+              <NewsThumbnail
+                thumbnailType={ThumbnailType.Category}
+                thumbnailData={news}
+              />
+            </div>
+          ))}
+        </div>
+      ) : null}
+
+      {topCategoryNews.length ? (
+        <MoreButton
+          buttonCallback={() => history.push(`/top-news/${category.name}`)}
+        />
+      ) : null}
     </div>
   );
 };

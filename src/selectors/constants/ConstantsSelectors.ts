@@ -6,6 +6,7 @@ export const selectCategories = (): Category[] => {
   return Object.entries(categories).map(
     ([id, category]: [string, Category]): Category => {
       return {
+        apiStatusSelector: category.apiStatusSelector,
         name: category.name,
         selector: category.selector,
       };

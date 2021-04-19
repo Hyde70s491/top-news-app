@@ -1,5 +1,8 @@
-import NewsCategoryStateModel from "../../models/NewsCategoryStateModel";
+import NewsCategoryStateModel, {
+  ApiStatus,
+} from "../../models/NewsCategoryStateModel";
 
 export const initialState: NewsCategoryStateModel = {
+  apiStatus: ApiStatus.Idle,
   entities: {},
 };

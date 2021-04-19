@@ -30,7 +30,6 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
   props: React.PropsWithChildren<NewsThumbnailProps>
 ) => {
   const { thumbnailData, thumbnailType } = props;
-  const { category, id, imageUrl, subtitle, title } = thumbnailData;
 
   const location = useLocation();
   const [thumbnailRoute, setThumbnailRoute] = useState<string>("");
@@ -39,13 +38,17 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
     const routeFragments = location.pathname.split("/");
 
     if (routeFragments.length === 4) {
-      setThumbnailRoute(`/${routeFragments[1]}/${routeFragments[2]}/${id}`);
+      setThumbnailRoute(
+        `/${routeFragments[1]}/${routeFragments[2]}/${thumbnailData?.id}`
+      );
     } else if (location.pathname === "/top-news") {
-      setThumbnailRoute(`${location.pathname}/${category}/${id}`);
+      setThumbnailRoute(
+        `${location.pathname}/${thumbnailData?.category}/${thumbnailData?.id}`
+      );
     } else {
-      setThumbnailRoute(`${location.pathname}/${id}`);
+      setThumbnailRoute(`${location.pathname}/${thumbnailData?.id}`);
     }
-  }, [category, id, location]);
+  }, [location, thumbnailData]);
 
   const handleThumbnailClick = (): void => {
     sessionStorage.setItem("newsData", JSON.stringify(thumbnailData));
@@ -57,11 +60,19 @@ const NewsThumbnail: React.FC<NewsThumbnailProps> = (
       to={thumbnailRoute}
       onClick={handleThumbnailClick}
     >
-      {imageUrl && (
-        <img className="news-thumbnail__image" src={imageUrl} alt="news" />
+      {thumbnailData?.imageUrl && (
+        <img
+          className="news-thumbnail__image"
+          src={thumbnailData?.imageUrl}
+          alt="news"
+        />
       )}
-      <span className="news-thumbnail__title">{title}</span>
-      {subtitle && <span className="news-thumbnail__subtitle">{subtitle}</span>}
+      <span className="news-thumbnail__title">{thumbnailData?.title}</span>
+      {thumbnailData?.subtitle && (
+        <span className="news-thumbnail__subtitle">
+          {thumbnailData?.subtitle}
+        </span>
+      )}
     </NavLink>
   );
 };
