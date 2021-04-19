@@ -5,11 +5,13 @@ import { render } from "@testing-library/react";
 
 import NewsByCategory from "./NewsByCategory";
 import rootStore from "../../../../stores/rootStore";
+import { selectBusinessApi } from "../../../../selectors/api/ApiSelectors";
 import { selectTopBusinessNews } from "../../../../selectors/news/NewsSelectors";
 
 describe("<NewsByCategory /> test", () => {
   it("renders", () => {
     const categoryProp = {
+      apiStatusSelector: selectBusinessApi,
       name: "business",
       selector: selectTopBusinessNews,
     };
